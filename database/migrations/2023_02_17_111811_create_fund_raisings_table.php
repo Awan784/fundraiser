@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('fund_raisings', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('country');
             $table->string('name');
             $table->string('location');
@@ -24,6 +26,7 @@ return new class extends Migration
             $table->string('bank_id')->nullable();
             $table->string('phone_no')->nullable(); 
             $table->string('fund_type')->nullable();
+            $table->string('code')->nullable();
             $table->string('s_description')->nullable();
             $table->string('l_description')->nullable();
             $table->string('banner_image')->nullable();

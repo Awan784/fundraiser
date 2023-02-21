@@ -22,13 +22,13 @@
                         <div class="ml-auto">
                             <div class="share-icon flex">
                                 <div class="valign">
-                                    <span>March 25th, 2022</span>
+                                    <time>  {{ $preview->created_at->diffForHumans() }}    </time>
                                 </div>
                             </div>
                         </div>
                     </div>
                         <div class="main-img mt-40 mb-40 radius-5">
-                            <img src={{ asset('/images/'.$preview->banner_image) }}" alt="">
+                            <img src="{!! asset( $preview->banner_image) !!}" alt="">
                         </div>
                         <div class="text mb-20">
                             <p>{{  $preview->l_description }}</p>
@@ -46,16 +46,15 @@
 
                         <div class="mb-50 mt-50">
                             <div class="row">
-                                <div class="col-6">
+                                @foreach ( $images as $image) 
+                                    
+                                <div class="col-6 mt-50">
                                     <div class="iner-img">
-                                        <img src="/frontend/assets/img/blog/b/v1.jpg" alt="">
+                                        <img src="{!! asset( $image) !!}" alt="">
                                     </div>
                                 </div>
-                                <div class="col-6">
-                                    <div class="iner-img">
-                                        <img src="/frontend/assets/img/blog/b/v4.jpg" alt="">
-                                    </div>
-                                </div>
+                                @endforeach
+                             
                             </div>
                         </div>
 

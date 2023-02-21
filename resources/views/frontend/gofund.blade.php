@@ -5,6 +5,11 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-11">
                                 <div class="box-shadow to-up">
+
+                                    @if (session('success'))
+                                    <div class="alert alert-success">{{ session('success') }}</div>
+                                @endif
+                                    
                                     <form  id="formOne" method="post" action="{{  route('gofundstep-2')  }}" enctype="multipart/form-data">
                                         @csrf
 
@@ -19,7 +24,7 @@
                                                 <div class="form-group mb-30 ">
                                                     
                                                     <select class="form-select form-control" name="country">
-                                                      <option selected>Select your country</option>
+                                                      <option selected disabled>Select your country</option>
                                                       <option value="Guinea">Guinea</option>
                                                       <option value="Ivory Coast">Ivory Coast</option>
                                                       <option value="Mali">Mali</option>
@@ -27,6 +32,9 @@
                                                       <option value="Senegal">Senegal</option>
                                                     </select>
                                                 </div>
+                                                @error('country')
+                                                <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                             <div class="col-12">
                                                 <div class="mb-30">
@@ -34,15 +42,22 @@
                                                     <!-- <p class="notice">We use your location to determine your currency.</p> -->
                                                 </div>
                                                 <div class="form-group mb-30 has-error has-danger">
-                                                    <input id="form_name" type="text" name="name" placeholder="Enter your name here" required="required">
+                                                    <input id="form_name" type="text" name="name" placeholder="Enter your name here">
                                                 </div>
+                                                @error('name')
+                                                    
+                                                <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                             <div class="col-12">
                                                 <div class="mb-30">
                                                     <h6 class="fw-400">Where are you located?</h6>
                                                 </div>
                                                 <div class="form-group mb-30 has-error has-danger">
-                                                    <input id="form_name" type="text" name="location" placeholder="Enter your complete address" required="required">
+                                                    <input id="form_name" type="text" name="location" placeholder="Enter your complete address">
+                                                @error('location')
+                                                <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
                                                 </div>
                                             </div>
                                              
@@ -72,6 +87,10 @@
                                                     <input type="radio" class="btn-check" value="Others" name="why_fundraising" id="option35" autocomplete="off">
                                                     <label class="btn btn-secondary mb-20 radio-button-custom" for="option35">Others</label>
                                                 </div>
+                                                @error('why_fundraising')
+                                                    
+                                                <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>   
 

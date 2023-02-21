@@ -5,8 +5,8 @@
         <div class="row justify-content-center">
             <div class="col-lg-11">
                 <div class="box-shadow to-up">
-                    <form id="contact-form" method="post" action="#" novalidate="true">
-
+                    <form  method="post" action="{{ route('gofund_otp') }}" >
+                      @csrf
                         <div class="messages"></div>
                           
                         <div class="controls row">
@@ -16,7 +16,7 @@
                                     <!-- <p class="notice">We use your location to determine your currency.</p> -->
                                 </div>
                                 <div class="form-group mb-30 has-error has-danger">
-                                    <input id="form_name" type="text" name="name" placeholder="Enter your full name" required="required">
+                                    <input id="form_name" type="text" name="full_name" placeholder="Enter your full name" required="required">
                                 </div>
                             </div>
                             <div class="col-6">
@@ -25,7 +25,7 @@
                                     <!-- <p class="notice">We use your location to determine your currency.</p> -->
                                 </div>
                                 <div class="form-group mb-30 has-error has-danger">
-                                    <input id="form_name" type="email" name="name" placeholder="Enter your email address" required="required">
+                                    <input id="form_name" type="email" name="email" placeholder="Enter your email address" required="required">
                                 </div>
                             </div>
                             <div class="col-6">
@@ -34,7 +34,7 @@
                                     <!-- <p class="notice">We use your location to determine your currency.</p> -->
                                 </div>
                                 <div class="form-group mb-30 has-error has-danger">
-                                    <input id="form_name" type="text" name="name" placeholder="Enter your username" required="required">
+                                    <input id="form_name" type="text" name="username" placeholder="Enter your username" required="required">
                                 </div>
                             </div>
                             <div class="col-6">
@@ -43,7 +43,7 @@
                                     <!-- <p class="notice">We use your location to determine your currency.</p> -->
                                 </div>
                                 <div class="form-group mb-30 has-error has-danger">
-                                    <input id="form_name" type="text" name="name" placeholder="Enter your telephone " required="required">
+                                    <input id="form_name" type="text" name="telephone" placeholder="Enter your telephone " required="required">
                                 </div>
                             </div>
                             <div class="col-6">
@@ -52,7 +52,7 @@
                                     <!-- <p class="notice">We use your location to determine your currency.</p> -->
                                 </div>
                                 <div class="form-group mb-30 has-error has-danger">
-                                    <input id="form_name" type="password" name="name" placeholder="*************" required="required">
+                                    <input id="form_name" type="password" name="password" placeholder="*************" required="required">
                                 </div>
                             </div>
                             <div class="col-6">
@@ -61,7 +61,7 @@
                                     <!-- <p class="notice">We use your location to determine your currency.</p> -->
                                 </div>
                                 <div class="form-group mb-30 has-error has-danger">
-                                    <input id="form_name" type="password" name="name" placeholder="*************" required="required">
+                                    <input id="form_name" type="password" name="confirm_password" placeholder="*************" required="required">
                                 </div>
                             </div>
                             
@@ -69,11 +69,11 @@
                         </div>   
 
                             <div class="col-12 text-center pt-30">
-                                <a href="{{ route('gofund_otp') }}" class="butn butn-md bg-dark-brown text-light radius-30">
+                                <button  class="butn butn-md bg-dark-brown text-light radius-30">
                                     <span class="text slide-up">Continue</span>
                                     <span class="text slide-down">Continue</span>
 
-                                </a>
+                                </button>
                             </div>
                             <div class="col-12 text-center pt-30">
                                 

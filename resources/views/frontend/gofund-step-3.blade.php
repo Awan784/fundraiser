@@ -27,7 +27,7 @@
                                     <label class="btn btn-secondary mb-20 radio-button-custom" for="option16">Anonymous</label>
                                     <div class="form-group mb-30 has-error has-danger">
 
-                                    <input id="form_name" class="private-check-input" type="text"  placeholder="4 DIGIT ACCESS CODE">
+                                    <input id="form_name" class="private-check-input" type="text" name="code" placeholder="4 DIGIT ACCESS CODE" maxlength="4">
 
                                     </div>
                                 </div>
@@ -95,7 +95,10 @@
 
 @endsection
 @section('scripts')
-
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
     <script type="text/javascript">
         $(".private-check-input").hide();
         $(".mobile-money-input").hide();

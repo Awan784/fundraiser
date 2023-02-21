@@ -6,8 +6,8 @@
         <div class="row justify-content-center">
             <div class="col-lg-11">
                 <div class="box-shadow to-up">
-                    <form id="contact-form" method="post" action="https://www.smartinnovates.com/uithemez/item/ravo01/contact.php" novalidate="true">
-
+                    <form  method="post" action="{{ route('gofundstep-7') }}">
+                    @csrf
                         <div class="messages"></div>
 
                         <div class="controls row">
@@ -17,7 +17,7 @@
                                     <!-- <p class="notice">We use your location to determine your currency.</p> -->
                                 </div>
                                 <div class="form-group mb-30 has-error has-danger">
-                                    <input id="form_name" type="text" name="name" placeholder="######" required="required">
+                                    <input id="form_name" type="text" name="otp" placeholder="######" required="required">
                                 </div>
                             </div>
                             
@@ -29,10 +29,10 @@
                             
 
                             <div class="col-12 text-center pt-30">
-                                <a href="{{ route('gofundstep-7') }}" class="butn butn-md bg-dark-brown text-light radius-30">
+                                <button type="submit" class="butn butn-md bg-dark-brown text-light radius-30">
                                     <span class="text slide-up">Continue</span>
                                     <span class="text slide-down">Continue</span>
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </form>

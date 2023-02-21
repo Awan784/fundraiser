@@ -26,7 +26,8 @@ Route::post('/fundRasing',[HomeController::class,'signin'])->name('gofundstep-2'
 Route::post('/fundRa/step',[HomeController::class,'gofundstep_three'])->name('gofundstep-3');
 Route::post('/fundRa/step/four',[HomeController::class,'gofundstep_four'])->name('gofundstep-4');
 Route::get('/fundRa/step/five',[HomeController::class,'gofundstep_five'])->name('gofundstep-5');
-Route::get('/fundRa/otp',[HomeController::class,'gofundstep_otp'])->name('gofund_otp');
-Route::get('/fundRa/step/seven',[HomeController::class,'gofundstep_seven'])->name('gofundstep-7');
+Route::post('/fundRa/otp/otp-login',[HomeController::class,'gofundstep_otp'])->name('gofund_otp');
+Route::post('/fundRa/otp/fund-login',[HomeController::class,'fund_login'])->name('fund_login');
+Route::post('/fundRa/step/seven',[HomeController::class,'gofundstep_seven'])->name('gofundstep-7');
 Route::get('/gofundme/login',[HomeController::class,'gofund_login'])->name('gofundLogin');
 

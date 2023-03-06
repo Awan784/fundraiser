@@ -13,14 +13,14 @@
 
 
                     <p>YOUR FUNDRAISER REFERENCE IS </p> 
-                    <h5 class="mb-10">MTFX000001</h5>
+                    <h5 class="mb-10">{{ $formInfo->reference_id }}</h5>
                     <p>YOUR FUNDRAISER NAME IS</p> 
-                    <h5 class="mb-10">SOS MEDICAL</h5>
+                    <h5 class="mb-10">{{ $formInfo->fund_name }}</h5>
                     
                     <p>FUNDS WILL BE TRANSFERRED UPDON YOUR REQUEST TO</p> 
-                    <h5 class="mb-10">628686234</h5>
+                    <h5 class="mb-10">{{  $formInfo->phone_no }} {{$formInfo->bank_id  }}</h5>
                     <p>THIS FUND IS PRIVATE. ACCESS CODE FOR DETAILS</p> 
-                    <h5 class="mb-10">9876</h5>
+                    <h5 class="mb-10">{{ $formInfo->code }}</h5>
                     <p>Your Fundraiser is accessible on website below</p>
                     <h5 class="mb-10"><a href="index.html">www.mouliya.com</a></h5>
 

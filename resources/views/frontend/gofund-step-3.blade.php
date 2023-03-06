@@ -37,7 +37,7 @@
                                     <h6 class="fw-400">Short Description of your fundraiser?</h6>
                                 </div>
                                 <div class="form-group mb-30 has-error has-danger">
-                                    <input id="form_name" type="text" name="s_description" placeholder="Enter 75 character for short description" required="required">
+                                    <input id="form_name" type="text" name="s_description" placeholder="Enter 75 character for short description" required="required" maxlength="75">
                                 </div>
                             </div>
                             <div class="col-12">

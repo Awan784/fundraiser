@@ -14,7 +14,7 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::view('/', 'frontend.index')->name('frontend-index');
+Route::get('/', [HomeController::class,'index'])->name('frontend-index');
 Route::get('/admin',[AdminDashboardController::class,'login'])->name('adminIndex');
 Route::get('/admin/dashboard',[AdminDashboardController::class,'index'])->name('AdminDashboard');
 Route::get('/admin/active-fundraiser',[AdminDashboardController::class,'active_fundraiser'])->name('active-fundraiser');
@@ -30,4 +30,5 @@ Route::post('/fundRa/otp/otp-login',[HomeController::class,'gofundstep_otp'])->n
 Route::post('/fundRa/otp/fund-login',[HomeController::class,'fund_login'])->name('fund_login');
 Route::post('/fundRa/step/seven',[HomeController::class,'gofundstep_seven'])->name('gofundstep-7');
 Route::get('/gofundme/login',[HomeController::class,'gofund_login'])->name('gofundLogin');
+Route::get('/Donation/{FundRaising:id}',[HomeController::class,'fetchFunds'])->name('fetchFund');
 

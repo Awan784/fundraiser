@@ -38,7 +38,7 @@
                         <div class="mt-50">
                             <h6 class="fz-20">
                                 <div>
-                    {{ $preview->name }}
+                                    <div>Total Goal Amount : GNF {{ $preview->goal_amount }}</div>
 
                                 </div>
                             </h6>

@@ -23,7 +23,7 @@
                                                 </div>
                                                 <div class="form-group mb-30 ">
                                                     
-                                                    <select class="form-select form-control" name="country">
+                                                     <select class="form-select form-control"  name="country">
                                                       <option selected disabled>Select your country</option>
                                                       <option value="Guinea">Guinea</option>
                                                       <option value="Ivory Coast">Ivory Coast</option>
@@ -42,7 +42,7 @@
                                                     <!-- <p class="notice">We use your location to determine your currency.</p> -->
                                                 </div>
                                                 <div class="form-group mb-30 has-error has-danger">
-                                                    <input id="form_name" type="text" name="name" placeholder="Enter your name here">
+                                                    <input id="form_name" type="text" name="name" value="{{ old('name') }}" placeholder="Enter your name here">
                                                 </div>
                                                 @error('name')
                                                     
@@ -54,7 +54,7 @@
                                                     <h6 class="fw-400">Where are you located?</h6>
                                                 </div>
                                                 <div class="form-group mb-30 has-error has-danger">
-                                                    <input id="form_name" type="text" name="location" placeholder="Enter your complete address">
+                                                    <input id="form_name" value="{{ old('location') }}" type="text" name="location" placeholder="Enter your complete address">
                                                 @error('location')
                                                 <div class="alert alert-danger">{{ $message }}</div>
                                                 @enderror
@@ -99,7 +99,7 @@
                                             
 
                                             <div class="col-12 text-center pt-30">
-                                                <button  id="submitButtonOne" type="submit" class="butn butn-md bg-dark-brown text-light radius-30">
+                                                <button  type="submit" class="butn butn-md bg-dark-brown text-light radius-30">
                                                     <span class="text slide-up">Continue</span>
                                                     <span class="text slide-down">Continue</span>
                                                 </button>
@@ -113,7 +113,10 @@
                 </section>
 @endsection
 @section('scripts')
-
+<script
+src="https://code.jquery.com/jquery-2.2.4.min.js"
+integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+crossorigin="anonymous"></script>
     <script type="text/javascript">
         $(".private-check-input").hide();
         $(".mobile-money-input").hide();
@@ -141,34 +144,6 @@
                 $(".mobile-money-input").hide();
 
         }
-    //     $(() => {
-    // $("#submitButtonOne").click(function(e) {
-    //   event.preventDefault();
-    //         var form = $("#formOne");
-    //         var url = form.attr('action');
-    //         $.ajax({
-    //             type: "POST",
-    //             url: url,
-    //             data: form.serialize(),
-    //             success: function(data) {
-    //               $.toast({
-    //       heading: 'Success',
-    //       text: 'Tracking Updated successfully',
-    //       showHideTransition: 'slide',
-    //       icon: 'success',
-    //       position: 'top-end'
-    //     }); 
-                      
-    //                 // Ajax call completed successfully
-    //                 // alert("Form Submited Successfully");
-    //             },
-    //             error: function(data) {
-                      
-    //                 // Some error in ajax call
-    //                 alert("some Error");
-    //             }
-    //         });
-    //     });
-    // });
+   
     </script>
 @endsection

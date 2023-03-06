@@ -5,6 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-11">
                 <div class="box-shadow to-up">
+
                     <form  method="post" action="{{ route('gofund_otp') }}" >
                       @csrf
                         <div class="messages"></div>
@@ -16,7 +17,10 @@
                                     <!-- <p class="notice">We use your location to determine your currency.</p> -->
                                 </div>
                                 <div class="form-group mb-30 has-error has-danger">
-                                    <input id="form_name" type="text" name="full_name" placeholder="Enter your full name" required="required">
+                                    <input id="form_name" value="{{ old('full_name') }}" type="text" name="full_name" placeholder="Enter your full name">
+                                    @error('full_name')
+                                    <p class="text-sm text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-6">
@@ -25,7 +29,10 @@
                                     <!-- <p class="notice">We use your location to determine your currency.</p> -->
                                 </div>
                                 <div class="form-group mb-30 has-error has-danger">
-                                    <input id="form_name" type="email" name="email" placeholder="Enter your email address" required="required">
+                                    <input id="form_name" type="email" value="{{ old('email') }}" name="email" placeholder="Enter your email address" >
+                                    @error('email')
+                                    <p class="text-sm text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-6">
@@ -34,7 +41,10 @@
                                     <!-- <p class="notice">We use your location to determine your currency.</p> -->
                                 </div>
                                 <div class="form-group mb-30 has-error has-danger">
-                                    <input id="form_name" type="text" name="username" placeholder="Enter your username" required="required">
+                                    <input id="form_name" type="text" value="{{ old('username') }}" name="username" placeholder="Enter your username">
+                                    @error('username')
+                                    <p class="text-sm text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-6">
@@ -43,7 +53,10 @@
                                     <!-- <p class="notice">We use your location to determine your currency.</p> -->
                                 </div>
                                 <div class="form-group mb-30 has-error has-danger">
-                                    <input id="form_name" type="text" name="telephone" placeholder="Enter your telephone " required="required">
+                                    <input id="form_name" type="text" value="{{ old('telephone') }}" name="telephone" placeholder="Enter your telephone " >
+                                    @error('telephone')
+                                    <p class="text-sm text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-6">
@@ -52,7 +65,10 @@
                                     <!-- <p class="notice">We use your location to determine your currency.</p> -->
                                 </div>
                                 <div class="form-group mb-30 has-error has-danger">
-                                    <input id="form_name" type="password" name="password" placeholder="*************" required="required">
+                                    <input id="form_name" type="password" name="password" placeholder="*************" >
+                                    @error('password')
+                                    <p class="text-sm text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-6">
@@ -61,7 +77,10 @@
                                     <!-- <p class="notice">We use your location to determine your currency.</p> -->
                                 </div>
                                 <div class="form-group mb-30 has-error has-danger">
-                                    <input id="form_name" type="password" name="confirm_password" placeholder="*************" required="required">
+                                    <input id="form_name" type="password" name="confirm_password" placeholder="*************" >
+                                    @error('confirm_password')
+                                    <p class="text-sm text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
                             

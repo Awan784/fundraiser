@@ -3,7 +3,20 @@
 <section class="contact-crv">
     <div class="container">
         <div class="row justify-content-center">
+
             <div class="col-lg-6">
+                <div class="p-3">
+                @if(session()->has('error'))
+                <div class="alert alert-danger">
+                    {{ session()->get('error') }}
+                </div>
+            </div>
+            @endif
+            @error('email')
+            <div class="alert alert-danger">
+                {{ $message }}
+            </div>  
+            @enderror 
                 <div class="box-shadow to-up">
                     <form  method="post" action="{{ route('fund_login') }}" enctype="multipart/form-data">
                       @csrf
@@ -13,12 +26,18 @@
 
                             <div class="col-lg-12">
                                 <div class="form-group mb-30 has-error has-danger">
-                                    <input id="form_email" type="email" name="email" placeholder="Email Address" required="required">
+                                    <input id="form_email" type="email" name="email" placeholder="Email Address" >
+                                    @error('email')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group mb-30 has-error has-danger">
-                                    <input id="form_name" type="password" name="password" placeholder="Password" required="required">
+                                    <input id="form_name" type="password" name="password" placeholder="Password" >
+                                    @error('password')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                                 </div>
                             </div>
                             <div class="col-12 text-center pt-30">

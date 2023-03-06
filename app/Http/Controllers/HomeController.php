@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Hash;
 use Image;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Mail;
 use Session;
@@ -37,14 +38,14 @@ class HomeController extends Controller
 
     public function signin(Request $request){
 
+        // dd($request->all());
  try{
-        $request->validate([
+    $validator = Validator::make($request->all(), [
             'country' => 'required',
             'name' => 'required',
             'location' => 'required',
             'why_fundraising' => 'required',
         ]);
-// dd($request->all());
         $FundRaising = new FundRaising;
         $FundRaising->name = $request->name;
         $FundRaising->country = $request->country;
@@ -54,17 +55,29 @@ class HomeController extends Controller
         session()->put('first_form_id', $FundRaising->id);
         return view('frontend.gofund-step-2')->with('success', 'User created successfully.');
              } catch (\Exception $e) {
-                return redirect()->back()->withInput()->withErrors(['error' => 'An error occurred. Please try again.']);
+                return redirect()->back()->withErrors($validator)->withInput();
             }
         }
         
     
     public function gofundstep_three(Request $request ){
+                  
+        $validator = Validator::make($request->all(), [
+            'name_of_fund' => 'required',
+            'amount_goal' => 'required',
+            'fund_for' => 'required',
+            'payment_method' => 'required',
+        ]);
+
 
         $Formid = session('first_form_id');
+        $random = sprintf("%06d", mt_rand(1, 999999));
+        $refernce_id = 'MTFX' .$random;
+
         $form = FundRaising::find($Formid);
         
         $form->fund_name = $request->name_of_fund;
+        $form->reference_id = $refernce_id;
         $form->goal_amount = $request->amount_goal;
         $form->collecting_fund_for = $request->fund_for;
         $form->fund_receive = $request->payment_method;
@@ -85,6 +98,7 @@ class HomeController extends Controller
 
         return view('frontend.gofund-step-3');
     }
+
     public function gofundstep_four(Request $request){
     
         $images = array();
@@ -136,18 +150,18 @@ class HomeController extends Controller
     }
     public function gofundstep_otp(Request $request){
     
-     
+     try{
+        $validator = Validator::make($request->all(), [
+            'full_name' => 'required',
+            'email' => 'required|unique:users,email',
+            'username' => 'required',
+            'telephone' => 'required',
+            'password' => 'min:6',
+            'confirm_password' => 'required_with:password|same:password|min:6'
+        
+        ]);
 
 
-        $this->validate($request, [
-    'password' => 'min:6',
-    'confirm_password' => 'required_with:password|same:password|min:6'
-]);
-              
-
-              
-    // Validation code goes here
-// dd($request->all());
     $user = User::create([
         'full_name' => $request->full_name,
         'email' => $request->email,
@@ -163,45 +177,69 @@ class HomeController extends Controller
         $message->subject('Your OTP');
     });
 
-    // Store the OTP in the session for verification later
     $request->session()->put('otp', $otp);
     $request->session()->put('email', $user->email);
 
-
-        return view('frontend.gofund-step6');
+ return view('frontend.gofund-step6');
+       } 
+       catch (\Exception $e)
+        {
+                return redirect()->back()->withErrors($validator)->withInput();
+        }
     }
-    public function gofundstep_seven(Request $request){
-            
-           $otp = session('otp');
-           if($request->otp == $otp) {
-            Session::forget('otp');
-        return view('frontend.gofund-step7');
+    public function gofundstep_seven(Request $request)
+    {
+          $otp = session('otp');
+        if($request->otp == $otp) {
+         Session::forget('otp');
+         $Formid = session('first_form_id');
+         $formInfo = FundRaising::where('id',$Formid)->first();
+      
+
+        return view('frontend.gofund-step7' ,compact('formInfo'));
             } else
              return view('frontend.gofund-step6');
-
     }
-    public function gofund_login(){
-      
-        return view('frontend.gofundme-login');
+    public function gofund_login()
+    {
+     return view('frontend.gofundme-login');
     }
-    public function fund_login(Request $request){
-        
-
+    public function fund_login(Request $request)
+    { 
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required',
+        ]);
          $user = User::where('email',$request->email)->first();
-         Auth::login($user);
-         $otp = sprintf("%06d", mt_rand(1, 999999));
+         if ($user && Hash::check($request->password, $user->password)) {
+            // The user is authenticated
+        
+            $otp = sprintf("%06d", mt_rand(1, 999999));
+   
+            Mail::send('otp-email', ['otp' => $otp], function($message) use ($user) {
+                $message->to($user->email);
+                $message->subject('Your OTP');
+            });
+        
+            // Store the OTP in the session for verification later
+            $request->session()->put('otp', $otp);
+            $request->session()->put('email', $user->email);
+        
+        
+                return view('frontend.gofund-step6');
+        }
+        return back()->with('error', 'Invaliad Email or Password');         }
 
-         Mail::send('otp-email', ['otp' => $otp], function($message) use ($user) {
-             $message->to($user->email);
-             $message->subject('Your OTP');
-         });
-     
-         // Store the OTP in the session for verification later
-         $request->session()->put('otp', $otp);
-         $request->session()->put('email', $user->email);
-     
-     
-             return view('frontend.gofund-step6');
-         }
-    
+        public function index()
+        {  
+            $FundRaising =  FundRaising::orderByDesc('created_at')->skip(0)->take(9)->get(); 
+            return view('frontend.index',compact('FundRaising'));
+        }
+        public function fetchFunds($fetchFund)
+        {
+            $fetchFund = FundRaising::where('id',$fetchFund)->first();
+            $FundRaising =  FundRaising::orderBy('created_at' , 'ASC')->skip(0)->take(3)->get();
+            $images = explode('|' , $fetchFund->raiser_images);          
+            return view ('frontend.fundraising-details',compact('fetchFund','images','FundRaising'));
+        }
 }

@@ -304,16 +304,18 @@
             <div class="container">
 
                 <div class="row">
+                    @foreach ($FundRaising as  $fund)
+                        
                     <div class="col-lg-4">
                         <div class="item box-shadow crv mb-30">
-                            <div class="img">
-                                <img src="frontend/assets/img/blog/b/b1.jpg" alt="">
+                            <div class="img" >
+                                <img src="{!! asset( $fund->banner_image) !!}" alt="" style="height: 273px" >
 
 
                                 <div class="tags">
-                                    <a href="fundraising-details.html" class="gat">9 donations</a>
-                                    <a href="fundraising-details.html" class="tag text-white">
-                                        12.000.000 GNF
+                                    <a href="{{ route('fetchFund' , $fund->id) }}" class="gat">0 donations</a>
+                                    <a href="{{ route('fetchFund' , $fund->id) }}" class="tag text-white">
+                                        {{ $fund->goal_amount }}
                                     </a>
                                 </div>
 
@@ -321,20 +323,20 @@
                             <div class="cont">
                                 <div class="info1">
                                     <div class="author">
-                                        <span>Mila Kunis</span>
+                                        <span>{{ $fund->name }}</span>
                                     </div>
                                     <div class="date">
-                                        <span>14 sep 2021</span>
+                                        <span>{{ $fund->created_at->diffForHumans() }}</span>
                                     </div>
                                 </div>
-                                <div class="title mb-10">
-                                    <h5 class="mb-10"><a href="fundraising-details.html">ways to quickly increase traffic to your website</a></h5>
-                                    <p class="mb-10">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                <div class="title mb-10"    >
+                                    <h5 class="mb-10"><a href="{{ route('fetchFund' , $fund->id) }}">{{  $fund->s_description }}</a></h5>
+                                    <p class="mb-10 text-truncate">{{  $fund->l_description }}</p>
                                 </div>
 
                                 <div class="skills-box full-width">
                                     <div class="skill-item">
-                                        <h6 class="text-u ls3 fz-13">Goal Acheived : 85 %</h6>
+                                        <h6 class="text-u ls3 fz-13">Goal Acheived : 0 %</h6>
                                         <div class="skill-progress">
                                             <div class="progres gr-green-light-bg" data-value="85%"></div>
                                         </div>
@@ -345,206 +347,9 @@
                             </div>
                         </div>
                     </div>
+                    @endforeach
 
-                    <div class="col-lg-4">
-                        <div class="item box-shadow crv mb-30">
-                            <div class="img">
-                                <img src="frontend/assets/img/blog/b/b2.jpg" alt="">
-
-                                <div class="tags">
-                                    <a href="#" class="gat">6 donations</a>
-                                    <a href="#" class="tag text-white">
-                                        12.000.000 GNF
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="cont">
-                                <div class="info1">
-                                    <div class="author">
-                                        <span>Mila Kunis</span>
-                                    </div>
-                                    <div class="date">
-                                        <span>14 sep 2021</span>
-                                    </div>
-                                </div>
-                                <div class="title mb-10">
-                                    <h5><a href="#">ways to quickly increase traffic to your website</a></h5>
-                                    
-                                    <p class="mb-10">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                </div>
-                                <div class="skills-box full-width">
-                                    <div class="skill-item">
-
-                                        <h6 class="text-u ls3 fz-13">Goal Acheived : 85 %</h6>
-                                        <div class="skill-progress">
-                                            <div class="progres gr-green-light-bg" data-value="85%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="item box-shadow crv mb-30">
-                            <div class="img">
-                                <img src="frontend/assets/img/blog/b/b3.jpg" alt="">
-
-                                <div class="tags">
-                                    <a href="#" class="gat">6 donations</a>
-                                    <a href="#" class="tag text-white">
-                                        12.000.000 GNF 
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="cont">
-                                <div class="info1">
-                                    <div class="author">
-                                        <span>Mila Kunis</span>
-                                    </div>
-                                    <div class="date">
-                                        <span>14 sep 2021</span>
-                                    </div>
-                                </div>
-                                <div class="title mb-10">
-                                    <h5><a href="#">ways to quickly increase traffic to your website</a></h5>
-                                    
-                                    <p class="mb-10">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                </div>
-                                <div class="skills-box full-width">
-                                    <div class="skill-item">
-
-                                        <h6 class="text-u ls3 fz-13">Goal Acheived : 85 %</h6>
-                                        <div class="skill-progress">
-                                            <div class="progres gr-green-light-bg" data-value="85%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="item box-shadow crv mb-30">
-                            <div class="img">
-                                <img src="frontend/assets/img/blog/b/b4.jpg" alt="">
-
-                                <div class="tags">
-                                    <a href="#" class="gat">12 donations</a>
-                                    <a href="#" class="tag text-white">
-                                        12.000.000 GNF 
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="cont">
-                                <div class="info1">
-                                    <div class="author">
-                                        <span>Mila Kunis</span>
-                                    </div>
-                                    <div class="date">
-                                        <span>14 sep 2021</span>
-                                    </div>
-                                </div>
-                                <div class="title mb-10">
-                                    <h5><a href="#">ways to quickly increase traffic to your website</a></h5>
-                                    
-                                    <p class="mb-10">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                </div>
-                                <div class="skills-box full-width">
-                                    <div class="skill-item">
-
-                                        <h6 class="text-u ls3 fz-13">Goal Acheived : 85 %</h6>
-                                        <div class="skill-progress">
-                                            <div class="progres gr-green-light-bg" data-value="85%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="item box-shadow crv mb-30">
-                            <div class="img">
-                                <img src="frontend/assets/img/blog/b/b5.jpg" alt="">
-
-                                <div class="tags">
-                                    <a href="#" class="gat">6 donations</a>
-                                    <a href="#" class="tag text-white">
-                                        12.000.000 GNF 
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="cont">
-                                <div class="info1">
-                                    <div class="author">
-                                        <span>Mila Kunis</span>
-                                    </div>
-                                    <div class="date">
-                                        <span>14 sep 2021</span>
-                                    </div>
-                                </div>
-                                <div class="title mb-10">
-                                    <h5><a href="#">ways to quickly increase traffic to your website</a></h5>
-                                    
-                                    <p class="mb-10">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                </div>
-                                <div class="skills-box full-width">
-                                    <div class="skill-item">
-
-                                        <h6 class="text-u ls3 fz-13">Goal Acheived : 85 %</h6>
-                                        <div class="skill-progress">
-                                            <div class="progres gr-green-light-bg" data-value="85%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="item box-shadow crv mb-30">
-                            <div class="img">
-                                <img src="frontend/assets/img/blog/b/b6.jpg" alt="">
-
-                                <div class="tags">
-                                    <a href="#" class="gat">6 donations</a>
-                                    <a href="#" class="tag text-white">
-                                        12.000.000 GNF 
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="cont">
-                                <div class="info1">
-                                    <div class="author">
-                                        <span>Mila Kunis</span>
-                                    </div>
-                                    <div class="date">
-                                        <span>14 sep 2021</span>
-                                    </div>
-                                </div>
-                                <div class="title mb-10">
-                                    <h5><a href="#">ways to quickly increase traffic to your website</a></h5>
-                                    
-                                    <p class="mb-10">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                </div>
-                                <div class="skills-box full-width">
-                                    <div class="skill-item">
-
-                                        <h6 class="text-u ls3 fz-13">Goal Acheived : 85 %</h6>
-                                        <div class="skill-progress">
-                                            <div class="progres gr-green-light-bg" data-value="85%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
+      
                     <div class="col-12 text-center pt-10">
                         <a href="fundraising.html" class="butn butn-md btn-secondary text-light radius-30 mobile-contribute-button">
                             <span class="text slide-up">Load more..</span>

@@ -14,12 +14,12 @@
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900%7CMontserrat:300,400,500,600,700,800,900" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../admin/app-assets/fonts/feather/style.min.css">
-    <link rel="stylesheet" type="text/css" href="../admin/app-assets/fonts/simple-line-icons/style.css">
-    <link rel="stylesheet" type="text/css" href="../admin/app-assets/fonts/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../admin/app-assets/vendors/css/perfect-scrollbar.min.css">
-    <link rel="stylesheet" type="text/css" href="../admin/app-assets/vendors/css/prism.min.css">
-    <link rel="stylesheet" type="text/css" href="../admin/app-assets/css/app.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('/admin/app-assets/fonts/feather/style.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/admin/app-assets/fonts/simple-line-icons/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/admin/app-assets/fonts/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/admin/app-assets/vendors/css/perfect-scrollbar.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/admin/app-assets/vendors/css/prism.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/admin/app-assets/css/app.css')}}">
   </head>
   <body data-col="1-column" class=" 1-column  blank-page blank-page">
     <!-- ////////////////////////////////////////////////////////////////////////////-->
@@ -40,16 +40,17 @@
                     </div>
                     <div class="card-body">
                         <div class="card-block">
-                            <form action="{{ route('AdminDashboard') }}">
+                            <form action="{{ route('AdminDashboard') }}" method="post">
+                                @csrf
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <input type="email" class="form-control form-control-lg" name="inputEmail" id="inputEmail" placeholder="Email Address" required email>
+                                        <input type="email" class="form-control form-control-lg" name="email" id="inputEmail" placeholder="Email Address" required email>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <input type="password" class="form-control form-control-lg" name="inputPass" id="inputPass" placeholder="Password" required>
+                                        <input type="password" class="form-control form-control-lg" name="password" id="inputPass" placeholder="Password" required>
                                     </div>
                                 </div>
 
@@ -88,22 +89,22 @@
     <!-- ////////////////////////////////////////////////////////////////////////////-->
 
     <!-- BEGIN VENDOR JS-->
-    <script src="../admin/app-assets/vendors/js/core/jquery-3.3.1.min.js"></script>
-    <script src="../admin/app-assets/vendors/js/core/popper.min.js"></script>
-    <script src="../admin/app-assets/vendors/js/core/bootstrap.min.js"></script>
-    <script src="../admin/app-assets/vendors/js/perfect-scrollbar.jquery.min.js"></script>
-    <script src="../admin/app-assets/vendors/js/prism.min.js"></script>
-    <script src="../admin/app-assets/vendors/js/jquery.matchHeight-min.js"></script>
-    <script src="../admin/app-assets/vendors/js/screenfull.min.js"></script>
-    <script src="../admin/app-assets/vendors/js/pace/pace.min.js"></script>
-    <script src="../admin/app-assets/js/particles.min.js"></script>
-    <script src="../admin/app-assets/js/stars.js"></script>
+    <script src="{{asset('/admin/app-assets/vendors/js/core/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{asset('/admin/app-assets/vendors/js/core/popper.min.js')}}"></script>
+    <script src="{{asset('/admin/app-assets/vendors/js/core/bootstrap.min.js')}}"></script>
+    <script src="{{asset('/admin/app-assets/vendors/js/perfect-scrollbar.jquery.min.js')}}"></script>
+    <script src="{{asset('/admin/app-assets/vendors/js/prism.min.js')}}"></script>
+    <script src="{{asset('/admin/app-assets/vendors/js/jquery.matchHeight-min.js')}}"></script>
+    <script src="{{asset('/admin/app-assets/vendors/js/screenfull.min.js')}}"></script>
+    <script src="{{asset('/admin/app-assets/vendors/js/pace/pace.min.js')}}"></script>
+    <script src="{{asset('/admin/app-assets/js/particles.min.js')}}"></script>
+    <script src="{{asset('/admin/app-assets/js/stars.js')}}"></script>
     <!-- BEGIN VENDOR JS-->
     <!-- BEGIN PAGE VENDOR JS-->
     <!-- END PAGE VENDOR JS-->
     <!-- BEGIN CONVEX JS-->
-    <script src="..admin/app-assets/js/app-sidebar.js"></script>
-    <script src="..admin/app-assets/js/notification-sidebar.js"></script>
+    <script src="{{asset('admin/app-assets/js/app-sidebar.js')}}""></script>
+    <script src="{{asset('admin/app-assets/js/notification-sidebar.js')}}""></script>
     <!-- END CONVEX JS-->
     <!-- BEGIN PAGE LEVEL JS-->
     <!-- END PAGE LEVEL JS-->

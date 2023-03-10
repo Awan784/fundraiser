@@ -9,9 +9,9 @@
           <li class="{{Request::url() == url('/user-dashboard') ? 'active' : ''}}  nav-item"><a href="{{ route('user-dashboard') }}"><i class="icon-home"></i><span data-i18n="" class="menu-title">Dashboard</span></a>
           </li>
           
-          <li class="{{Request::url() == url('/user/active/fundraiser') ? 'active' : ''}}  nav-item"><a href="{{ route('User-ActiveFundrasier') }}"><i class="icon-book-open"></i><span data-i18n="" class="menu-title">Active Fundraisers</span></a>
+          <li class="{{Request::url() == url('/active/fundraiser') ? 'active' : ''}}  nav-item"><a href="{{ route('User-ActiveFundrasier') }}"><i class="icon-book-open"></i><span data-i18n="" class="menu-title">Active Fundraisers</span></a>
           </li>
-          <li class=" nav-item"><a href="closed-user-fundraiser.html"><i class="icon-notebook"></i><span data-i18n="" class="menu-title">Closed Fundraisers</span></a>
+          <li class="{{Request::url() == url('/user/closed/fundraiser') ? 'active' : ''}} nav-item"><a href="{{ route('User-ClosedFundrasier') }}"><i class="icon-notebook"></i><span data-i18n="" class="menu-title">Closed Fundraisers</span></a>
           </li>
           <li class=" nav-item"><a href="messages.html"><i class="icon-speech"></i><span data-i18n="" class="menu-title">Communications</span></a>
           </li>
@@ -19,9 +19,9 @@
           </li>
           <li class=" nav-item"><a href="withdrawals.html"><i class="icon-paper-plane"></i><span data-i18n="" class="menu-title">Withdrawals</span></a>
           </li>
-          <li class=" nav-item"><a href="profile.html"><i class="icon-users"></i><span data-i18n="" class="menu-title">Profile</span></a>
+          <li class="{{Request::url() == url('/user/profile') ? 'active' : ''}} nav-item"><a href="{{ route('User-Profile') }}"><i class="icon-users"></i><span data-i18n="" class="menu-title">Profile</span></a>
           </li>
-          <li class=" nav-item d-lg-none"><a href="login-page.html"><i class="icon-power"></i><span data-i18n="" class="menu-title">Sign Out</span></a>
+          <li class=" nav-item d-lg-none"><a href="{{ route('User-logout') }}"><i class="icon-power"></i><span data-i18n="" class="menu-title">Sign Out</span></a>
           </li>
         </ul>
       </div>

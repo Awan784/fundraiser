@@ -1,12 +1,24 @@
 @extends('Layouts.gofung-interface')
 @section('content')
+<header class="pg-header-sipm gr-purple-light-bg valign">
+    <div class="container mt-60">
+        <div class="row justify-content-center">
+            <div class="col-lg-9 ">
+                <div class="caption text-center">
+                    <span class="fz-14 mb-10 text-u ls4 text-main-color">We're here to guide you every step of the way.</span>
+                    <h1 class="fz-50 fw-600 text-main-color">Let's begin fundraising </h1>
+                </div>
+            </div>
+        </div>
 
+    </div>
+</header>
 <section class="contact-crv">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-11">
                 <div class="box-shadow to-up">
-                    <form  method="post" action="{{ route('gofundstep-4') }}" enctype="multipart/form-data">
+                    <form  method="post" action="{{ route('submit-step-three') }}" enctype="multipart/form-data">
                            @csrf
                         <div class="messages"></div>
 
@@ -26,9 +38,10 @@
                                     <input type="radio" class="btn-check public-check" name="fund_type" value="Anonymous" id="option16" autocomplete="off" onchange="publicCheckbox()">
                                     <label class="btn btn-secondary mb-20 radio-button-custom" for="option16">Anonymous</label>
                                     <div class="form-group mb-30 has-error has-danger">
-
                                     <input id="form_name" class="private-check-input" type="text" name="code" placeholder="4 DIGIT ACCESS CODE" maxlength="4">
-
+                                    @error('fund_type')
+                                    <p class="text-sm text-danger">{{ $message }}</p>
+                                    @enderror
                                     </div>
                                 </div>
                             </div>
@@ -37,7 +50,10 @@
                                     <h6 class="fw-400">Short Description of your fundraiser?</h6>
                                 </div>
                                 <div class="form-group mb-30 has-error has-danger">
-                                    <input id="form_name" type="text" name="s_description" placeholder="Enter 75 character for short description" required="required" maxlength="75">
+                                    <input id="form_name" type="text" name="short_description" placeholder="Enter 75 character for short description"  maxlength="75">
+                                    @error('short_description')
+                                    <p class="text-sm text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-12">
@@ -45,25 +61,13 @@
                                     <h6 class="fw-400">Briefly describe why you are starting this fundraiser.</h6>
                                 </div>
                                 <div class="form-group has-error has-danger mb-30">
-                                    <textarea id="form_message" name="l_description" placeholder="Please describe the details here.." rows="3" required="required"></textarea>
+                                    <textarea id="form_message" name="long_description" placeholder="Please describe the details here.." rows="3" ></textarea>
+                                    @error('long_description')
+                                    <p class="text-sm text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="mb-30">
-                                    <h6 class="fw-400">Fundraiser main banner image</h6>
-                                </div>
-                                <div class="form-group has-error has-danger mb-30">
-                                    <input type="file" name="banner_image" class="file-input-image">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-12">
-                                <div class="mb-30">
-                                    <h6 class="fw-400">Other Fundraiser images</h6>
-                                </div>
-                                <div class="form-group has-error has-danger mb-30">
-                                    <input type="file" name="raiser_images[]" class="file-input-image" multiple>
-                                </div>
-                            </div>
+                      
                         </div>   
 
                             <div class="col-lg-12">

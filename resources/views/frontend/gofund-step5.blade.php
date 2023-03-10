@@ -1,5 +1,8 @@
 @extends('Layouts.gofung-interface')
 @section('content')
+@include('Layouts.frontend-sidebar-login')
+
+
 <section class="contact-crv">
     <div class="container">
         <div class="row justify-content-center">
@@ -83,7 +86,18 @@
                                     @enderror
                                 </div>
                             </div>
-                            
+                            <div class="col-12">
+                                <div class="mb-30">
+                                    <h6 class="fw-400">Would you like to receive your confirmation code by Email or SMS ?</h6>
+                                </div>
+                                <div class="form-group mb-30">
+
+                                    <input type="radio" class="btn-check " name="options" id="option8" autocomplete="off">
+                                    <label class="btn btn-secondary mb-20 radio-button-custom" for="option8">Email</label>
+                                    <input type="radio" class="btn-check " name="options" id="option10" autocomplete="off">
+                                    <label class="btn btn-secondary mb-20 radio-button-custom" for="option10">SMS</label>
+                                </div>
+                            </div>
                              
                         </div>   
 
@@ -94,12 +108,6 @@
 
                                 </button>
                             </div>
-                            <div class="col-12 text-center pt-30">
-                                
-                                <p>Already have an account ? <a href="{{ route('gofundLogin') }}" class="text-center text-main-color"> Login</a></p>
-                                
-                            </div>
-
                     </form>
                     
 

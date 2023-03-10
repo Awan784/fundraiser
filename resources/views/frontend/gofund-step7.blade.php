@@ -1,6 +1,22 @@
 @extends('Layouts.gofung-interface')
-@section('content')
 
+@section('content')
+<header class="pg-header-sipm gr-purple-light-bg valign " style="padding-bottom: 10px !important;">
+    <div class="container mt-60">
+        <div class="row justify-content-center">
+            <div class="col-lg-9 ">
+                <div class="caption text-center">
+                    <span class="fz-14 mb-10 text-u ls4 text-main-color">YOU HAVE SUCCESFULLY STARTED A FUND RAISER</span>
+                    <span class="fz-14 mb-10 text-u ls4 text-main-color underline"><a href="{{ route('userlogin') }}" class="share-text">Login</a> to your account to manage all your fundraising activities.</span>
+                    <span class="fz-14 mb-10 text-u ls4 text-main-color underline">PLEASE <a href="share.html" class="share-text">SHARE</a>  THE INFORMATION BELOW TO YOURS PEERS SO THEY
+                    CAN EASILY </span>
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 <section class="contact-crv">
     <div class="container">
         <div class="row justify-content-center">

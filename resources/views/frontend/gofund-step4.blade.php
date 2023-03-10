@@ -1,5 +1,7 @@
 @extends('Layouts.gofung-interface')
+
 @section('content')
+@include('Layouts.frontend-slider')
 <section class="contact-crv">
     <div class="container">
         <div class="row justify-content-center">

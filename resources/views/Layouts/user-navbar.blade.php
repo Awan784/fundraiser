@@ -5,7 +5,7 @@
           <div class="logo-img"><img class="mobile-logo" src="../app-assets/img/logo.png" alt="Convex Logo"/></div></a></div>
         <button type="button" data-toggle="collapse" class="navbar-toggle d-lg-none float-right"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><span class="d-lg-none navbar-right navbar-collapse-toggle"></span>
       </span>
-          <h6 class="welcome-admin">Welcome <span class="gr-green-text"> Mouctar Yali Bah</span></h6>
+          <h6 class="welcome-admin">Welcome <span class="gr-green-text">{{ auth()->user()->full_name }}</span></h6>
         
       </div>
       <div class="navbar-container">

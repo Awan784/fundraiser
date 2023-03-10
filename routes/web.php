@@ -46,9 +46,26 @@ Route::post('/fundRa/step/seven',[HomeController::class,'gofundstep_seven'])->na
 Route::get('/gofundme/login',[HomeController::class,'gofund_login'])->name('gofundLogin');
 Route::get('/Donation/{FundRaising:id}',[HomeController::class,'fetchFunds'])->name('fetchFund');
 
+ 
+ //User Dashboard Routes
+
 Route::view('/user/login', 'user.login-page')->name('userlogin');
 Route::post('/user/dashoard/', [UserController::class,'login'])->name('userDashboard');
-Route::get('/user-dashboard', function () { return view('user.index');})->name('user-dashboard')->middleware('auth');
-Route::get('/user/active/fundraiser', [UserController::class,'active_fudraiser'])->name('User-ActiveFundrasier');
+
+Route::middleware(['auth'])->group(function () {
+Route::get('/user-dashboard', function () { return view('user.index');})->name('user-dashboard');
+Route::get('/active/fundraiser', [UserController::class,'active_fudraiser'])->name('User-ActiveFundrasier');
+Route::get('/active/fundraiser/edit/{FundRaising:id}', [UserController::class,'edit_active_fudraiser'])->name('User-editActiveFundrasier');
+// Route::put('/active/fundraiser/form/{FundRaising:id}', [UserController::class,'update_active_fudraiser'])->name('form.update');
+Route::get('/active/fundraiser/form/{FundRaising:id}', [UserController::class,'show_active_fudraiser'])->name('User-ShowActiveFundrasier');
+Route::get('/user/closed/fundraiser',[UserController::class,'closed_fundraiser'])->name('User-ClosedFundrasier');
+Route::get('/user/profile',[UserController::class,'user_profile'])->name('User-Profile');
 Route::get('/user/active/logout', [UserController::class,'logout'])->name('User-logout');
 Route::delete('/user/activefund/{id}/delete', [UserController::class,'activefund_delete'])->name('activefund_delete');
+Route::post('/change-password', [UserController::class,'changePassword'])->name('user.change-password');
+
+
+});
+
+
+    //User Dashboard Routes End

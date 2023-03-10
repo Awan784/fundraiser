@@ -34,8 +34,8 @@
                                           </tr>
                                         </thead>
                                         @php
-                      $id = 0;
-                        @endphp
+                                          $id = 0;
+                                        @endphp
                                         <tbody>
                                           @foreach ($Active_fundrasier as $active)
                                             
@@ -66,10 +66,10 @@
                                                     <button type="button" class="btn btn-sm btn-outline-warning round">Active</button>
                                                 </td>
                                               <td>
-                                                    <a href="view-user-fundraiser.html" class="color-black p-0" data-original-title="" title="View">
+                                                    <a href="{{ route('User-ShowActiveFundrasier',$active->id) }}" class="color-black p-0" data-original-title="" title="View">
                                                         <i class="fa fa-eye font-medium-3 mr-2"></i>
                                                     </a>
-                                                    <a href="edit-user-fundraiser.html" class="color-black p-0" data-original-title="" title="Edit">
+                                                    <a href="{{ route('User-editActiveFundrasier',$active->id) }}" class="color-black p-0" data-original-title="" title="Edit">
                                                         <i class="fa fa-pencil font-medium-3 mr-2"></i>
                                                     </a>
                                                     <a class="color-black p-0" data-original-title="" title="close" data-toggle="modal" data-target="#default1">

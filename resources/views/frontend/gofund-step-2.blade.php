@@ -1,38 +1,37 @@
 @extends('Layouts.gofung-interface')
 @section('content')
-              
+<header class="pg-header-sipm gr-purple-light-bg valign">
+    <div class="container mt-60">
+        <div class="row justify-content-center">
+            <div class="col-lg-9 ">
+                <div class="caption text-center">
+                    <span class="fz-14 mb-10 text-u ls4 text-main-color">We're here to guide you every step of the way.</span>
+                    <h1 class="fz-50 fw-600 text-main-color">Let's begin fundraising </h1>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</header>
                 <section class="contact-crv">
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-11">
                                 <div class="box-shadow to-up">
                                     
-                                    <form  method="post" action="{{ route('gofundstep-3') }}" enctype="multipart/form-data">
+                                    <form  method="post" action="{{ route('submit-step-two') }}" enctype="multipart/form-data">
                                             @csrf
                                         <div class="messages"></div>
                 
-                                        <div class="controls row">
-                                            
-                                            <div class="col-12">
-                                                <div class="mb-30">
-                                                    <h6 class="fw-400">What name would you like to give you fund?</h6>
-                                                </div>
-                                                <div class="form-group mb-30 has-error has-danger">
-                                                    <input id="form_name" type="text" name="name_of_fund" placeholder="SOS Medical" required>
-                                                    @error('name_of_fund')
-                                                    <div class="alert alert-danger">{{ $message }}</div>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                            
+                                        <div class="controls row">                
                                             <div class="col-12">
                                                 <div class="mb-30">
                                                     <h6 class="fw-400">What is your initial goal amount to raise?</h6>
                                                 </div>
                                                 <div class="form-group mb-30 has-error has-danger">
-                                                    <input id="form_name" type="text" name="amount_goal" placeholder="10.000.000 GNF" required>
+                                                    <input id="form_name" type="text" name="amount_goal" placeholder="10.000.000 GNF">
                                                     @error('amount_goal')
-                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                    <p class="text-sm text-danger">{{ $message }}</p>
                                                     @enderror
                                                 </div>
                                             </div>
@@ -42,12 +41,12 @@
                                                 </div>
                                                 <div class="form-group mb-30">
                 
-                                                    <input type="radio" class="btn-check " value="Yourself" name="fund_for" id="option8" autocomplete="off" required>
+                                                    <input type="radio" class="btn-check " value="Yourself" name="fund_for" id="option8" autocomplete="off" >
                                                     <label class="btn btn-secondary mb-20 radio-button-custom" for="option8">Yourself</label>
-                                                    <input type="radio" class="btn-check " value="Someone Else" name="fund_for" id="option10" autocomplete="off" required>
+                                                    <input type="radio" class="btn-check " value="Someone Else" name="fund_for" id="option10" autocomplete="off" >
                                                     <label class="btn btn-secondary mb-20 radio-button-custom" for="option10">Someone Else</label>
                                                     @error('fund_for')
-                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                    <p class="text-sm text-danger">{{ $message }}</p>
                                                     @enderror
                                                       
                                                 </div>
@@ -58,9 +57,9 @@
                                                 </div>
                                                 <div class="form-group mb-30">
                                                     <div>
-                                                        <input type="radio" class="btn-check mobile-money" name="payment_method" id="option12" value="bank_transfer"  required>
+                                                        <input type="radio" class="btn-check mobile-money" name="payment_method" id="option12" value="bank_transfer"  >
                                                         <label class="btn btn-secondary mb-20 radio-button-custom"  for="option12">Bank Transfer</label> 
-                                                        <input type="radio" name="payment_method" value="phone_payment"  id="option13" class="btn-check mobile-money" required> 
+                                                        <input type="radio" name="payment_method" value="phone_payment"  id="option13" class="btn-check mobile-money" > 
                                                         <label class="btn btn-secondary mb-20 radio-button-custom"  for="option13">Orange Transfer</label> 
                                                     </div>
                                                      <div id="phone_div"> 
@@ -70,7 +69,7 @@
                                                     <input id="form_name" class="bank-account-input" type="number" id="bank_id" name="bank_id" placeholder="Enter Full Bank Account Here" >
                                                     </div>
                                                     @error('payment_method')
-                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                    <p class="text-sm text-danger">{{ $message }}</p>
                                                     @enderror
                                                 </div>
                                             </div>

@@ -19,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="../app-assets/fonts/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/perfect-scrollbar.min.css">
     <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/prism.min.css">
-    <link rel="stylesheet" type="text/css" href="../app-assets/css/app.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/user/app-assets/css/app.css') }}">
   </head>
   <body data-col="1-column" class=" 1-column  blank-page blank-page">
     <!-- ////////////////////////////////////////////////////////////////////////////-->
@@ -34,22 +34,31 @@
                 <div id="particles-js"></div>
                 <div class="card py-2 box-shadow-2 width-400" style="position:relative;">
                     <div class="card-header text-center">
-                        <a href="http://demo.octasolutions.pk/mouliya/v2/"><img src="../app-assets/img/logo.png" alt="company-logo" class="mb-3" width="80"></a> 
+                        <a href="http://demo.octasolutions.pk/mouliya/v2/"><img src="{{ asset('/user/app-assets/img/logo.png') }}" alt="company-logo" class="mb-3" width="80"></a> 
                         <h4 class="text-uppercase text-bold-400 color-black">Let's get started</h4>
                     </div>
                     
                     <div class="card-body">
+                        
+                        
                         <div class="card-block">
-                            <form action="index.html">
+                            @if(session()->has('error'))
+                            <div class="alert alert-danger">
+                                {{ session()->get('error') }}
+                            </div>
+                        @endif
+                           
+                            <form action="{{ route('userDashboard') }}" method="post" enctype="multipart/form-data">
+                                @csrf
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <input type="email" class="form-control form-control-lg" name="inputEmail" id="inputEmail" placeholder="Email Address" required email>
+                                        <input type="email" class="form-control form-control-lg" name="email" id="inputEmail" placeholder="Email Address" required email>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <input type="password" class="form-control form-control-lg" name="inputPass" id="inputPass" placeholder="Password" required>
+                                        <input type="password" class="form-control form-control-lg" name="password" id="inputPass" placeholder="Password" required>
                                     </div>
                                 </div>
 
@@ -103,7 +112,7 @@
     <script src="../app-assets/vendors/js/screenfull.min.js"></script>
     <script src="../app-assets/vendors/js/pace/pace.min.js"></script>
     <script src="../app-assets/js/particles.min.js"></script>
-    <script src="../app-assets/js/stars.js"></script>
+    <script src="..{{asset(' /app-assets/js/stars.js') }}"></script>
     <!-- BEGIN VENDOR JS-->
     <!-- BEGIN PAGE VENDOR JS-->
     <!-- END PAGE VENDOR JS-->

@@ -1,5 +1,18 @@
 @extends('Layouts.gofung-interface')
 @section('content')
+<header class="pg-header-sipm gr-purple-light-bg valign">
+    <div class="container mt-60">
+        <div class="row justify-content-center">
+            <div class="col-lg-9 ">
+                <div class="caption text-center">
+                    <span class="fz-14 mb-10 text-u ls4 text-main-color">We're here to guide you every step of the way.</span>
+                    <h1 class="fz-50 fw-600 text-main-color">Let's begin fundraising </h1>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</header>
      <section class="contact-crv">
                     <div class="container">
                         <div class="row justify-content-center">
@@ -10,7 +23,7 @@
                                     <div class="alert alert-success">{{ session('success') }}</div>
                                 @endif
                                     
-                                    <form  id="formOne" method="post" action="{{  route('gofundstep-2')  }}" enctype="multipart/form-data">
+                                    <form  id="formOne" method="post" action="{{  route('submit-step-one')  }}" enctype="multipart/form-data">
                                         @csrf
 
                                         <div class="messages"></div>
@@ -31,10 +44,10 @@
                                                       <option value="Sierra Leone">Sierra Leone</option>
                                                       <option value="Senegal">Senegal</option>
                                                     </select>
+                                                    @error('country')
+                                                    <p class="text-sm text-danger">{{ $message }}</p>
+                                                    @enderror
                                                 </div>
-                                                @error('country')
-                                                <div class="alert alert-danger">{{ $message }}</div>
-                                                @enderror
                                             </div>
                                             <div class="col-12">
                                                 <div class="mb-30">
@@ -43,11 +56,11 @@
                                                 </div>
                                                 <div class="form-group mb-30 has-error has-danger">
                                                     <input id="form_name" type="text" name="name" value="{{ old('name') }}" placeholder="Enter your name here">
+                                                    @error('name')
+                                                        
+                                                    <p class="text-sm text-danger">{{ $message }}</p>
+                                                    @enderror
                                                 </div>
-                                                @error('name')
-                                                    
-                                                <div class="alert alert-danger">{{ $message }}</div>
-                                                @enderror
                                             </div>
                                             <div class="col-12">
                                                 <div class="mb-30">
@@ -56,7 +69,7 @@
                                                 <div class="form-group mb-30 has-error has-danger">
                                                     <input id="form_name" value="{{ old('location') }}" type="text" name="location" placeholder="Enter your complete address">
                                                 @error('location')
-                                                <div class="alert alert-danger">{{ $message }}</div>
+                                                <p class="text-sm text-danger">{{ $message }}</p>
                                                 @enderror
                                                 </div>
                                             </div>
@@ -86,11 +99,11 @@
                                                     <label class="btn btn-secondary mb-20 radio-button-custom" for="option34">Travel</label>
                                                     <input type="radio" class="btn-check" value="Others" name="why_fundraising" id="option35" autocomplete="off">
                                                     <label class="btn btn-secondary mb-20 radio-button-custom" for="option35">Others</label>
+                                                    @error('why_fundraising')
+                                                        
+                                                    <p class="text-sm text-danger">{{ $message }}</p>
+                                                    @enderror
                                                 </div>
-                                                @error('why_fundraising')
-                                                    
-                                                <div class="alert alert-danger">{{ $message }}</div>
-                                                @enderror
                                             </div>
                                         </div>   
 

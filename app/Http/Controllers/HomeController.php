@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\FundRaising;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Hash;
 use Image;
 use Illuminate\Support\Facades\Validator;
@@ -30,13 +31,13 @@ class HomeController extends Controller
 
 
 
-    public function fundraiser( ){
+    // public function fundraiser( ){
 
-        return view('frontend.gofund');
-    }
+    //     return view('frontend.gofund');
+    // }
 
 
-    public function signin(Request $request){
+    public function stepOne(Request $request){
 
         // dd($request->all());
  try{
@@ -53,54 +54,94 @@ class HomeController extends Controller
         $FundRaising->why_fundraising = $request->why_fundraising;
         $FundRaising->save();
         session()->put('first_form_id', $FundRaising->id);
-        return view('frontend.gofund-step-2')->with('success', 'User created successfully.');
+        return redirect()->route('step-two')->with('success', 'Step One Done successfully.');
              } catch (\Exception $e) {
                 return redirect()->back()->withErrors($validator)->withInput();
             }
         }
         
     
-    public function gofundstep_three(Request $request ){
-                  
-        $validator = Validator::make($request->all(), [
-            'name_of_fund' => 'required',
-            'amount_goal' => 'required',
-            'fund_for' => 'required',
-            'payment_method' => 'required',
-        ]);
-
-
-        $Formid = session('first_form_id');
-        $random = sprintf("%06d", mt_rand(1, 999999));
-        $refernce_id = 'MTFX' .$random;
-
-        $form = FundRaising::find($Formid);
+        public function stepTwo(Request $request)
+        {
+            $validator = Validator::make($request->all(), [
+                'amount_goal' => 'required',
+                'fund_for' => 'required',
+                'payment_method' => 'required',
+            ]);
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
+            $Formid = session('first_form_id');
+            $random = sprintf("%06d", mt_rand(1, 999999));
+            $refernce_id = 'MTFX' .$random;
         
-        $form->fund_name = $request->name_of_fund;
-        $form->reference_id = $refernce_id;
-        $form->goal_amount = $request->amount_goal;
-        $form->collecting_fund_for = $request->fund_for;
-        $form->fund_receive = $request->payment_method;
-        // dd($request->all());
-          if ($request->payment_method == 'bank_transfer') {
-            $request->validate([
-                'bank_id' => 'required',
-            ]);
-            $form->bank_id = $request->bank_id;
+            $form = FundRaising::find($Formid);
+        
+            $form->reference_id = $refernce_id;
+            $form->goal_amount = $request->amount_goal;
+            $form->collecting_fund_for = $request->fund_for;
+            $form->fund_receive = $request->payment_method;
+        
+            if ($request->payment_method == 'bank_transfer') {
+                $request->validate([
+                    'bank_id' => 'required',
+                ]);
+                $form->bank_id = $request->bank_id;
+            } else if ($request->payment_method == 'phone_payment') {
+                $request->validate([
+                    'phone_no' => 'required',
+                ]);
+                $form->phone_no = $request->phone_no;
+            }
+        
+            try {
+                $form->save();
+            } catch (\Exception $e) {
+                return redirect()->back()->with('error', 'Failed to save data. Error: ' . $e->getMessage());
+            }
+        
+            return redirect()->route('step-three')->with('success', 'Second Step Done successfully.');
         }
-        else if ($request->payment_method == 'phone_payment') {
-            $request->validate([
-                'phone_no' => 'required',
+        
+        public function stepThree(Request $request)
+        {
+            $validator = Validator::make($request->all(), [
+                'fund_type' => 'required',
+                'short_description' => 'required',
+                'long_description' => 'required',
             ]);
-            $form->phone_no = $request->phone_no;
-        }
-          $form->save();
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
+            $Formid = session('first_form_id');
+            $form = FundRaising::find($Formid);
+            
+                   $form->fund_type = $request->fund_type;
+                   if ($request->fund_type == 'Public' || 'Anonymous') {
+                   $form->code = $request->code;
+                         
+                }
+                else if ($request->fund_type == 'Private') {
+                  
+                    $form->code = $request->code;
+                }
+                   $form->s_description = $request->s_description;
+                   $form->l_description = $request->l_description;
 
-        return view('frontend.gofund-step-3');
+          $form->save();           
+          return redirect()->route('step-four')->with('success', 'Third Step Done successfully.');
     }
 
-    public function gofundstep_four(Request $request){
-    
+    public function stepFour(Request $request )
+    {
+        $validator = Validator::make($request->all(), [
+            'banner_image' => 'required',
+            'raiser_images' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
         $images = array();
         if($files = $request->file('raiser_images')){
           foreach($files as $file){
@@ -119,31 +160,18 @@ class HomeController extends Controller
             $fileName = time() . rand(100, 999) . '.' . $imageName;
             $request->banner_image->move(public_path() .'/bannerImages/', $fileName);
         }
-    
+        $Formid = session('first_form_id');
+        $form = FundRaising::find($Formid);
+        $form->banner_image = 'bannerImages/'. $fileName;
+        $form->raiser_images = implode('|' ,$image);
+        $form->save();
+        $preview = FundRaising::where('id',$Formid)->first();
+        $images = explode('|' , $preview->raiser_images);
 
-            $Formid = session('first_form_id');
-            $form = FundRaising::find($Formid);
-            
-                   $form->fund_type = $request->fund_type;
-                   if ($request->fund_type == 'Public' || 'Anonymous') {
-                   $form->code = $request->code;
-                         
-                }
-                else if ($request->fund_type == 'Private') {
-                  
-                    $form->code = $request->code;
-                }
-                   $form->s_description = $request->s_description;
-                   $form->l_description = $request->l_description;
-                   $form->banner_image = 'bannerImages/'. $fileName;
-                   $form->raiser_images = implode('|' ,$image);
-                   $form->save();
-                   $preview = FundRaising::where('id',$Formid)->first();
-                    $images = explode('|' , $preview->raiser_images);
-        
-        return view('frontend.gofund-step4',compact('preview' ,'images'));
+          return view('frontend.gofund-step4',compact('preview' ,'images'));
+
     }
-
+       
     public function gofundstep_five(){
            
         return view('frontend.gofund-step5' );
@@ -180,6 +208,13 @@ class HomeController extends Controller
     $request->session()->put('otp', $otp);
     $request->session()->put('email', $user->email);
 
+   
+    $Formid = session('first_form_id');
+    $form = FundRaising::find($Formid);
+
+    $form->user_id = $user->id;
+    $form->save();
+
  return view('frontend.gofund-step6');
        } 
        catch (\Exception $e)
@@ -187,19 +222,26 @@ class HomeController extends Controller
                 return redirect()->back()->withErrors($validator)->withInput();
         }
     }
-    public function gofundstep_seven(Request $request)
-    {
-          $otp = session('otp');
-        if($request->otp == $otp) {
-         Session::forget('otp');
-         $Formid = session('first_form_id');
-         $formInfo = FundRaising::where('id',$Formid)->first();
-      
+   public function gofundstep_seven(Request $request)
+{
+    $otp = session('otp');
+    if($request->otp == $otp) {
+        Session::forget('otp');
+        $Formid = session('first_form_id');
+        $formInfo = FundRaising::where('id',$Formid)->first();
 
-        return view('frontend.gofund-step7' ,compact('formInfo'));
-            } else
-             return view('frontend.gofund-step6');
+        return view('frontend.gofund-step7', compact('formInfo'));
+    } else {
+        $validatedData = $request->validate([
+            'otp' => 'required',
+        ], [
+            'otp.required' => 'The OTP field is required.',
+        ]);
+
+        return view('frontend.gofund-step6')->with(['error' => 'Incorrect OTP']);
     }
+}
+
     public function gofund_login()
     {
      return view('frontend.gofundme-login');
@@ -213,7 +255,11 @@ class HomeController extends Controller
          $user = User::where('email',$request->email)->first();
          if ($user && Hash::check($request->password, $user->password)) {
             // The user is authenticated
+            $Formid = session('first_form_id');
+            $form = FundRaising::find($Formid);
         
+            $form->user_id = $user->id;
+            $form->save();
             $otp = sprintf("%06d", mt_rand(1, 999999));
    
             Mail::send('otp-email', ['otp' => $otp], function($message) use ($user) {
@@ -228,17 +274,18 @@ class HomeController extends Controller
         
                 return view('frontend.gofund-step6');
         }
-        return back()->with('error', 'Invaliad Email or Password');         }
+        return back()->with('error', 'Invaliad Email or Password');       
+      }
 
         public function index()
         {  
-            $FundRaising =  FundRaising::orderByDesc('created_at')->skip(0)->take(9)->get(); 
+            $FundRaising =  FundRaising::orderByDesc('created_at')->whereNotNull('user_id')->skip(0)->take(9)->get(); 
             return view('frontend.index',compact('FundRaising'));
         }
         public function fetchFunds($fetchFund)
         {
             $fetchFund = FundRaising::where('id',$fetchFund)->first();
-            $FundRaising =  FundRaising::orderBy('created_at' , 'ASC')->skip(0)->take(3)->get();
+            $FundRaising =  FundRaising::orderBy('created_at' , 'ASC')->whereNotNull('user_id')->skip(0)->take(3)->get();
             $images = explode('|' , $fetchFund->raiser_images);          
             return view ('frontend.fundraising-details',compact('fetchFund','images','FundRaising'));
         }

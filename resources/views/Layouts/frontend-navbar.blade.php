@@ -53,7 +53,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://demo.octasolutions.pk/mouliya/v2/user-panel/html/login-page.html">
+                    <a class="nav-link" href="{{  route('userlogin') }}">
                         Sign In
                     </a>
                 </li>

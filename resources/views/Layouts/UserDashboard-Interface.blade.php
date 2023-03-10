@@ -21,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('/user/app-assets/vendors/css/prism.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/user/app-assets/vendors/css/chartist.min.css ')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/user/app-assets/css/app.css') }}">
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('/user/app-assets/vendors/css/switchery.min.css') }}"> --}}
   </head>
   <body data-col="2-columns" class=" 2-columns ">
     <!-- ////////////////////////////////////////////////////////////////////////////-->
@@ -46,7 +47,7 @@
     
     <!-- BEGIN VENDOR JS-->
     <script src="{{ asset('/user/app-assets/vendors/js/core/jquery-3.3.1.min.js') }}"></script>
-    <script src="{{ '/user/app-assets/vendors/js/core/popper.min.js' }}"></script>
+    <script src="{{ asset('/user/app-assets/vendors/js/core/popper.min.js') }}"></script>
     <script src="{{ asset('/user/app-assets/vendors/js/core/bootstrap.min.js') }}"></script>
     <script src="{{ asset('/user/app-assets/vendors/js/perfect-scrollbar.jquery.min.js') }}"></script>
     <script src="{{ asset('/user/app-assets/vendors/js/prism.min.js') }}"></script>
@@ -64,6 +65,12 @@
     <!-- END CONVEX JS-->
     <!-- BEGIN PAGE LEVEL JS-->
     <script src="{{ asset('/user/app-assets/js/dashboard-ecommerce.js') }}"></script>
+    <script src="{{ asset('/user/app-assets/js/data-tables/datatable-basic.js') }}"></script>
+    <script src="{{asset(' /user/app-assets/vendors/js/datatable/datatables.min.js') }}"></script>
+    <!-- END PAGE LEVEL JS-->
+     <!-- BEGIN PAGE LEVEL JS-->
+    <script src="{{ asset('/user/app-assets/js/switch.min.js') }}"></script>
+    <script src="{{ asset('/user/app-assets/vendors/js/switchery.min.js') }}"></script>
     <!-- END PAGE LEVEL JS-->
   </body>
 

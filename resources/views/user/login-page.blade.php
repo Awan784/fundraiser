@@ -14,11 +14,11 @@
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900%7CMontserrat:300,400,500,600,700,800,900" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../app-assets/fonts/feather/style.min.css">
-    <link rel="stylesheet" type="text/css" href="../app-assets/fonts/simple-line-icons/style.css">
-    <link rel="stylesheet" type="text/css" href="../app-assets/fonts/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/perfect-scrollbar.min.css">
-    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/prism.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/user/app-assets/fonts/feather/style.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/user/app-assets/fonts/simple-line-icons/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/user/app-assets/fonts/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/user/app-assets/vendors/css/perfect-scrollbar.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/user/app-assets/vendors/css/prism.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/user/app-assets/css/app.css') }}">
   </head>
   <body data-col="1-column" class=" 1-column  blank-page blank-page">
@@ -103,16 +103,16 @@
     <!-- ////////////////////////////////////////////////////////////////////////////-->
 
     <!-- BEGIN VENDOR JS-->
-    <script src="../app-assets/vendors/js/core/jquery-3.3.1.min.js"></script>
-    <script src="../app-assets/vendors/js/core/popper.min.js"></script>
-    <script src="../app-assets/vendors/js/core/bootstrap.min.js"></script>
-    <script src="../app-assets/vendors/js/perfect-scrollbar.jquery.min.js"></script>
-    <script src="../app-assets/vendors/js/prism.min.js"></script>
-    <script src="../app-assets/vendors/js/jquery.matchHeight-min.js"></script>
-    <script src="../app-assets/vendors/js/screenfull.min.js"></script>
-    <script src="../app-assets/vendors/js/pace/pace.min.js"></script>
-    <script src="../app-assets/js/particles.min.js"></script>
-    <script src="..{{asset(' /app-assets/js/stars.js') }}"></script>
+    <script src="/user/app-assets/vendors/js/core/jquery-3.3.1.min.js"></script>
+    <script src="{{ asset('/user/app-assets/vendors/js/core/popper.min.js') }}"></script>
+    <script src="{{ asset('/user/app-assets/vendors/js/core/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('/user/app-assets/vendors/js/perfect-scrollbar.jquery.min.js') }}"></script>
+    <script src="{{ asset('/user/app-assets/vendors/js/prism.min.js') }}"></script>
+    <script src="{{ asset('/user/app-assets/vendors/js/jquery.matchHeight-min.js') }}"></script>
+    <script src="{{ asset('/user/app-assets/vendors/js/screenfull.min.js') }}"></script>
+    <script src="{{ asset('/user/app-assets/vendors/js/pace/pace.min.js') }}"></script>
+    <script src="{{ asset('/user/app-assets/js/particles.min.js') }}"></script>
+    <script src="{{asset('/user/app-assets/js/stars.js') }}"></script>
     <!-- BEGIN VENDOR JS-->
     <!-- BEGIN PAGE VENDOR JS-->
     <!-- END PAGE VENDOR JS-->

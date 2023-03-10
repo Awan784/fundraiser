@@ -125,8 +125,8 @@ class HomeController extends Controller
                   
                     $form->code = $request->code;
                 }
-                   $form->s_description = $request->s_description;
-                   $form->l_description = $request->l_description;
+                   $form->s_description = $request->short_description;
+                   $form->l_description = $request->long_description;
 
           $form->save();           
           return redirect()->route('step-four')->with('success', 'Third Step Done successfully.');

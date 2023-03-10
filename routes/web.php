@@ -16,9 +16,11 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', [HomeController::class,'index'])->name('frontend-index');
-Route::get('/admin',[AdminDashboardController::class,'login'])->name('adminIndex');
-Route::get('/admin/dashboard',[AdminDashboardController::class,'index'])->name('AdminDashboard');
+Route::get('/admins',[AdminDashboardController::class,'login'])->name('adminIndex');
+Route::post('/admin/dashboard',[AdminDashboardController::class,'index'])->name('AdminDashboard');
 Route::get('/admin/active-fundraiser',[AdminDashboardController::class,'active_fundraiser'])->name('active-fundraiser');
+Route::get('/admin/close-fundraiser',[AdminDashboardController::class,'close_fundraiser'])->name('close-fundraiser');
+Route::get('/admin/feature-topics',[AdminDashboardController::class,'featuretopics'])->name('featuretopics');
 // Route::get('/fundraiser',[HomeController::class,'fundraiser'])->name('fundraiser');
 Route::get('/contact-us',[HomeController::class,'contact'])->name('contact');
 Route::get('/fundraising',[HomeController::class,'fundraising'])->name('fundraising');
@@ -62,10 +64,11 @@ Route::get('/user/closed/fundraiser',[UserController::class,'closed_fundraiser']
 Route::get('/user/profile',[UserController::class,'user_profile'])->name('User-Profile');
 Route::get('/user/active/logout', [UserController::class,'logout'])->name('User-logout');
 Route::delete('/user/activefund/{id}/delete', [UserController::class,'activefund_delete'])->name('activefund_delete');
+
+
+// Route::view('/admin/login','admin.login-page')->name('adminlogin');
+
 Route::post('/change-password', [UserController::class,'changePassword'])->name('user.change-password');
 
 
 });
-
-
-    //User Dashboard Routes End

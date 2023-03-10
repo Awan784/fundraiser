@@ -27,7 +27,7 @@
     <div class="wrapper">
 
 
-      <div data-active-color="black" data-background-color="white" data-image="" class="app-sidebar">
+      {{-- <div data-active-color="black" data-background-color="white" data-image="" class="app-sidebar">
         <div class="sidebar-header">
           <div class="logo clearfix"><a href="index.html" class="logo-text float-left">
               <div class="logo-img"><img src="../admin/app-assets/img/logo.png" alt="Convex Logo"/></div><span class="text align-middle">Mouliya</span></a></div>
@@ -35,14 +35,14 @@
         <div class="sidebar-content">
           <div class="nav-container">
             <ul id="main-menu-navigation" data-menu="menu-navigation" class="navigation navigation-main">
-              <li class="active nav-item"><a href="index.blade.php"><i class="icon-home"></i><span data-i18n="" class="menu-title">Dashboard</span></a>
+              <li class="active nav-item"><a href="{{route('AdminDashboard')}}"><i class="icon-home"></i><span data-i18n="" class="menu-title">Dashboard</span></a>
               </li>
               
-              <li class=" nav-item"><a href="active-fundraiser.blade.php"><i class="icon-book-open"></i><span data-i18n="" class="menu-title">Active Fundraisers</span></a>
+              <li class=" nav-item"><a href="{{route('active-fundraiser')}}"><i class="icon-book-open"></i><span data-i18n="" class="menu-title">Active Fundraisers</span></a>
               </li>
-              <li class=" nav-item"><a href="closed-fundraiser.html"><i class="icon-notebook"></i><span data-i18n="" class="menu-title">Closed Fundraisers</span></a>
+              <li class=" nav-item"><a href="{{route('close-fundraiserlose')}}"><i class="icon-notebook"></i><span data-i18n="" class="menu-title">Closed Fundraisers</span></a>
               </li>
-              <li class=" nav-item"><a href="feature-topics-list.html"><i class="icon-layers"></i><span data-i18n="" class="menu-title">Feature Topics</span></a>
+              <li class=" nav-item"><a href="{{route(';')}}"><i class="icon-layers"></i><span data-i18n="" class="menu-title">Feature Topics</span></a>
               </li>
               <li class=" nav-item"><a href="commissions.html"><i class="icon-wallet"></i><span data-i18n="" class="menu-title">Commissions</span></a>
               </li>
@@ -67,7 +67,8 @@
           </div>
         </div>
         <div class="sidebar-background"></div>
-      </div>
+      </div> --}}
+      @include('Layouts.admin-SideBar');
 @include('Layouts.Navbar')
 
       <div class="main-panel">

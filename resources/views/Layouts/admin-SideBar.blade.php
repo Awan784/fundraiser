@@ -1,7 +1,7 @@
 <div data-active-color="black" data-background-color="white" data-image="" class="app-sidebar">
     <div class="sidebar-header">
       <div class="logo clearfix"><a href="index.html" class="logo-text float-left">
-          <div class="logo-img"><img src="../app-assets/img/logo.png" alt="Convex Logo"/></div><span class="text align-middle">Mouliya</span></a></div>
+          <div class="logo-img"><img src="{{asset('/app-assets/img/logo.png')}}" alt="Convex Logo"/></div><span class="text align-middle">Mouliya</span></a></div>
     </div>
     <div class="sidebar-content">
       <div class="nav-container">
@@ -11,9 +11,9 @@
           
           <li class="active nav-item"><a href="{{  route('active-fundraiser') }}"><i class="icon-book-open"></i><span data-i18n="" class="menu-title">Active Fundraisers</span></a>
           </li>
-          <li class=" nav-item"><a href="closed-fundraiser.html"><i class="icon-notebook"></i><span data-i18n="" class="menu-title">Closed Fundraisers</span></a>
+          <li class=" nav-item"><a href="{{route('close-fundraiser')}}"><i class="icon-notebook"></i><span data-i18n="" class="menu-title">Closed Fundraisers</span></a>
           </li>
-          <li class=" nav-item"><a href="feature-topics-list.html"><i class="icon-layers"></i><span data-i18n="" class="menu-title">Feature Topics</span></a>
+          <li class=" nav-item"><a href="{{route('featuretopics')}}"><i class="icon-layers"></i><span data-i18n="" class="menu-title">Feature Topics</span></a>
           </li>
           <li class=" nav-item"><a href="commissions.html"><i class="icon-wallet"></i><span data-i18n="" class="menu-title">Commissions</span></a>
           </li>

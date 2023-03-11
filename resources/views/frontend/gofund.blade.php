@@ -51,18 +51,18 @@
                                             </div>
                                             <div class="col-12">
                                                 <div class="mb-30">
-                                                    <h6 class="fw-400">What is your name?</h6>
+                                                    <h6 class="fw-400">What name would you like to give you fund?</h6>
                                                     <!-- <p class="notice">We use your location to determine your currency.</p> -->
                                                 </div>
                                                 <div class="form-group mb-30 has-error has-danger">
-                                                    <input id="form_name" type="text" name="name" value="{{ old('name') }}" placeholder="Enter your name here">
+                                                    <input id="form_name" type="text" name="name" value="{{ old('name') }}" placeholder="SOS Medical">
                                                     @error('name')
                                                         
                                                     <p class="text-sm text-danger">{{ $message }}</p>
                                                     @enderror
                                                 </div>
                                             </div>
-                                            <div class="col-12">
+                                            {{-- <div class="col-12">
                                                 <div class="mb-30">
                                                     <h6 class="fw-400">Where are you located?</h6>
                                                 </div>
@@ -72,7 +72,7 @@
                                                 <p class="text-sm text-danger">{{ $message }}</p>
                                                 @enderror
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                              
                                             <div class="col-12">
                                                 <div class="mb-30">
@@ -97,6 +97,12 @@
                                                     <label class="btn btn-secondary mb-20 radio-button-custom" for="option33">Funeral & Memorial</label>
                                                     <input type="radio" class="btn-check" value="Travel" name="why_fundraising" id="option34" autocomplete="off">
                                                     <label class="btn btn-secondary mb-20 radio-button-custom" for="option34">Travel</label>
+                                                    <input type="radio" class="btn-check "  value="Competition" name="why_fundraising" id="option36" autocomplete="off">
+                                                    <label class="btn btn-secondary mb-20 radio-button-custom" for="option36">Competition</label>
+                                                    <input type="radio" class="btn-check "  value="NGO"  name="why_fundraising" id="option37" autocomplete="off">
+                                                    <label class="btn btn-secondary mb-20 radio-button-custom" for="option37">NGO</label>
+                                                    <input type="radio" class="btn-check " value="Religion" name="why_fundraising" id="option38" autocomplete="off">
+                                                    <label class="btn btn-secondary mb-20 radio-button-custom" for="option38">Religion</label>
                                                     <input type="radio" class="btn-check" value="Others" name="why_fundraising" id="option35" autocomplete="off">
                                                     <label class="btn btn-secondary mb-20 radio-button-custom" for="option35">Others</label>
                                                     @error('why_fundraising')
@@ -112,8 +118,7 @@
                                             
 
                                             <div class="col-12 text-center pt-30">
-                                                <button  type="submit" class="butn butn-md bg-dark-brown text-light radius-30">
-                                                    <span class="text slide-up">Continue</span>
+                                                <button  type="submit" class="btn btn-md bg-success text-light radius-30">
                                                     <span class="text slide-down">Continue</span>
                                                 </button>
                                             </div>

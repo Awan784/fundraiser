@@ -42,6 +42,8 @@ Route::post('/fundRa/step',[HomeController::class,'gofundstep_three'])->name('go
 Route::post('/fundRa/step/three',[HomeController::class,'gofundstep_three_one'])->name('gofundstep-3.1');
 Route::post('/fundRa/step/four',[HomeController::class,'gofundstep_four'])->name('gofundstep-4');
 Route::get('/fundRa/step/five',[HomeController::class,'gofundstep_five'])->name('gofundstep-5');
+Route::get('/otp-verification', function () { return view('frontend.gofund-step6');})->name('otp-verification');
+Route::get('/fundRa/otp/done',[HomeController::class,'gofundstep_done'])->name('gofund_done');
 Route::post('/fundRa/otp/otp-login',[HomeController::class,'gofundstep_otp'])->name('gofund_otp');
 Route::post('/fundRa/otp/fund-login',[HomeController::class,'fund_login'])->name('fund_login');
 Route::post('/fundRa/step/seven',[HomeController::class,'gofundstep_seven'])->name('gofundstep-7');

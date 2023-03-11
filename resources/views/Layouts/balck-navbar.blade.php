@@ -1,8 +1,9 @@
-<nav class="navbar navbar-expand-lg light mobile-menu-white">
+
+<nav class="navbar navbar-expand-lg mobile-menu-white">
     <div class="container">
         <a class="navbar-brand" href="{{ route('frontend-index') }}">
             <div class="logo">
-                <img src="{{ asset('/frontend/assets/img/logowebsite1.png') }}" alt="">
+                <img src="{{ asset('frontend/assets/img/logowebsite1.png') }}" alt="">
             </div>
         </a>
 
@@ -27,7 +28,7 @@
                         How it works
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ route('how-works') }}">    How GoFundMe Works</a></li>
+                        <li><a class="dropdown-item" href="{{ route('how-works') }}">    How Fundraiser Works</a></li>
                         <li><a class="dropdown-item"
                                 href="crowd-funding.html">What is crowdfunding?</a>
                         </li>
@@ -61,11 +62,10 @@
             <div class="social">
                 <ul class="rest">
                     <li>
-                        <a href="{{  route('fundraiser') }}" class="butn butn-md bg-light radius-30">
-                            <span class="text text-dark slide-up home-btn-bold">Start a Fundraiser</span>
-                            <span class="text text-dark slide-down home-btn-bold">Start a Fundraiser</span>
+                        <a href="{{  route('fundraiser') }}" class="butn butn-md bg-dark-brown radius-30">
+                            <span class="text text-light slide-up">Start a Fundraiser</span>
+                            <span class="text text-light slide-down">Start a Fundraiser</span>
                         </a>
-
                     </li>
                 </ul>
             </div>

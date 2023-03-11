@@ -15,7 +15,7 @@
                             <div class="tags flex">
                                 
                                 <div>
-                                    <a href="#">{{ $preview->name }}</a>
+                                    <a href="#">{{ $preview->fund_name }}</a>
                                     <a href="#">{{ $preview->why_fundraising }}</a>
                                     <a href="#">{{ $preview->country }}</a>
                                 </div>

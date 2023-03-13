@@ -21,6 +21,10 @@ Route::get('/admins',[AdminDashboardController::class,'login'])->name('adminInde
 Route::post('/admin/dashboard',[AdminDashboardController::class,'index'])->name('AdminDashboard');
 Route::get('/admin-dashboard', function () { return view('admin.index');})->name('admin-dashboard');
 Route::get('/admin/active-fundraiser',[AdminDashboardController::class,'active_fundraiser'])->name('active-fundraiser');
+Route::get('/admin/active-fundraiser/view-fundraiser/{id}',[AdminDashboardController::class,'viewfundraiser'])->name('view-fundraiser');
+Route::get('/admin/active-fundraiser/edit-fundraiser/{id}',[AdminDashboardController::class,'editfundraiser'])->name('edit-fundraiser');
+Route::post('/admin/active-fundraiser/update-fundraiser',[AdminDashboardController::class,'updatefundraiser'])->name('update-fundraiser');
+Route::get('/admin/active-fundraiser/delete-fundraiser/{id}',[AdminDashboardController::class,'deletefundraiser'])->name('delete-fundraiser');
 Route::get('/admin/close-fundraiser',[AdminDashboardController::class,'close_fundraiser'])->name('close-fundraiser');
 Route::get('/admin/feature-topics',[AdminDashboardController::class,'featuretopics'])->name('featuretopics');
 Route::get('/admin/commissions',[AdminDashboardController::class,'commissions'])->name('commissions');

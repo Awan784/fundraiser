@@ -52,8 +52,7 @@
                     </div>
                   </div>
                 </div>
-                @dd(auth('admins')->user()->username)
-                {{-- @dd(Session::get('username')) --}}
+               
                 <div class="col-xl-3 col-lg-6 col-12">
                   <div class="card gradient-black dashboard-item">
                     <div class="card-body">

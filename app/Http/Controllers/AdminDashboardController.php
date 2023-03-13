@@ -38,6 +38,32 @@ class AdminDashboardController extends Controller
         // dd($funraisers);
         return view('admin.active-fundraiser',compact('fundraisers'));
     }
+    public function viewfundraiser($id){
+        
+        $fundraiser=FundRaising::find($id);
+        // dd($fundraisers);
+        return view('admin.view-fundraiser',compact('fundraiser'));
+    }
+    public function editfundraiser($id){
+        
+        $fundraiser=FundRaising::find($id);
+        // dd($fundraiser);
+        return view('admin.edit-fundraiser',compact('fundraiser'));
+    }
+    public function updatefundraiser(Request $request){
+        // dd($request->all());
+        $data = FundRaising::find($request->id);
+        $data->country = $request->country;
+        $data->name = $request->name;
+        $data->goal_amount = $request->goal_amount;
+        $data->update();
+        return redirect()->route('active-fundraiser')->with('status','Data Updated Successfully');
+    }
+    public function deletefundraiser($id){
+        $data=FundRaising::findOrFail($id)->delete();
+        return redirect()->route('active-fundraiser');
+    }
+    
     public function close_fundraiser(){
         
         return view('admin.closed-fundraiser');

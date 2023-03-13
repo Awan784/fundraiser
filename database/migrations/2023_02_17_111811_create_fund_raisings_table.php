@@ -17,8 +17,6 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('reference_id')->nullable();
             $table->string('country');
-            $table->string('name');
-            $table->string('location');
             $table->string('why_fundraising');
             $table->string('fund_name')->nullable();
             $table->string('goal_amount')->nullable();

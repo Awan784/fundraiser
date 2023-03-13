@@ -8,7 +8,7 @@
     
     <title>Mouliya Admin - Featured Topics</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{asset('/app-assets/img/favicon.ico')}}" />
+    <link rel="shortcut icon" href="../app-assets/img/favicon.ico" />
     
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
@@ -66,10 +66,8 @@
           </div>
         </div>
     <div class="wrapper">
-
-      @include('Layouts.admin-SideBar');
-      @include('Layouts.Navbar');
-
+        @include('Layouts.admin-SideBar');
+        @include('Layouts.Navbar');
       <div class="main-panel">
         <div class="main-content">
           <div class="content-wrapper">
@@ -247,26 +245,25 @@
 
     
     <!-- BEGIN VENDOR JS-->
-    <script src="{{asset('/admin/app-assets/vendors/js/core/jquery-3.3.1.min.js')}}"></script>
-    <script src="{{asset('/admin/app-assets/vendors/js/core/popper.min.js')}}"></script>
-    <script src="{{asset('/admin/app-assets/vendors/js/core/bootstrap.min.js')}}"></script>
-    <script src="{{asset('/admin/app-assets/vendors/js/perfect-scrollbar.jquery.min.js')}}"></script>
-    <script src="{{asset('/admin/app-assets/vendors/js/prism.min.js')}}"></script>
-    <script src="{{asset('/admin/app-assets/vendors/js/jquery.matchHeight-min.js')}}"></script>
-    <script src="{{asset('/admin/app-assets/vendors/js/screenfull.min.js')}}"></script>
-    <script src="{{asset('/admin/app-assets/vendors/js/pace/pace.min.js')}}"></script>
+    <script src="{{ asset('/app-assets/vendors/js/core/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{ asset('/app-assets/vendors/js/core/popper.min.js')}}"></script>
+    <script src="{{ asset('/app-assets/vendors/js/core/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('/app-assets/vendors/js/perfect-scrollbar.jquery.min.js')}}"></script>
+    <script src="{{ asset('/app-assets/vendors/js/prism.min.js')}}"></script>
+    <script src="{{ asset('/app-assets/vendors/js/jquery.matchHeight-min.js')}}"></script>
+    <script src="{{ asset('/app-assets/vendors/js/screenfull.min.js')}}"></script>
+    <script src="{{ asset('/app-assets/vendors/js/pace/pace.min.js')}}"></script>
     <!-- BEGIN VENDOR JS-->
     <!-- BEGIN PAGE VENDOR JS-->
-    <script src="{{asset('/admin/app-assets/vendors/js/datatable/datatables.min.js')}}"></script>
+    <script src="{{ asset('/app-assets/vendors/js/datatable/datatables.min.js')}}"></script>
     <!-- END PAGE VENDOR JS-->
     <!-- BEGIN CONVEX JS-->
-    <script src="{{asset('/admin/app-assets/js/app-sidebar.js')}}"></script>
-    <script src="{{asset('/admin/app-assets/js/notification-sidebar.js')}}"></script>
-    <script src="{{asset('admin/app-assets/js/customizer.js')}}"></script>
+    <script src="{{ asset('/app-assets/js/app-sidebar.js')}}"></script>
+    <script src="{{ asset('/app-assets/js/notification-sidebar.js')}}"></script>
+    <script src="{{ asset('/app-assets/js/customizer.js')}}"></script>
     <!-- END CONVEX JS-->
     <!-- BEGIN PAGE LEVEL JS-->
-    <script src="{{asset('/admin/app-assets/js/data-tables/datatable-basic.js')}}"></script>
-    <!-- END PAGE LEVEL JS-->
+    <script src="{{ asset('/app-assets/js/data-tables/datatable-basic.js')}}"></script>
   </body>
 
 </html>

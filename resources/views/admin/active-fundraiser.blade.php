@@ -103,279 +103,59 @@
                               </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                  <td class="text-truncate">
-                                     1
-                                  </td>
-                                  <td class="text-truncate">
-                                      MFTX000001
-                                  </td>
-                                  <td class="text-truncate">
-                                      SOS Medical
-                                  </td>
-                                  <td class="text-truncate">
-                                      07/01/2022
-                                  </td>
-                                  <td class="text-truncate">
-                                      Guinea
-                                  </td>
-                                  
-                                  <td class="text-truncate">3 000 000 GNF</td>
-                                  <td class="text-truncate">2 000 000 GNF</td>
-
-                                  <td>
-                                        <button type="button" class="btn btn-sm btn-outline-warning round">Active</button>
-                                    </td>
-                                  <td>
-                                        <a href="view-fundraiser.html" class="color-black p-0" data-original-title="" title="View">
-                                            <i class="fa fa-eye font-medium-3 mr-2"></i>
-                                        </a>
-                                        <a href="edit-fundraiser.html" class="color-black p-0" data-original-title="" title="Edit">
-                                            <i class="fa fa-pencil font-medium-3 mr-2"></i>
-                                        </a>
-                                        <a class="color-black p-0" data-original-title="" title="close" data-toggle="modal" data-target="#default1">
-                                            <i class="fa fa-lock font-medium-3 mr-2"></i>
-                                        </a>
-                                        <a class="color-red p-0" data-original-title="" title="Delete" data-toggle="modal" data-target="#default">
-                                            <i class="fa fa-trash-o font-medium-3 mr-2"></i>
-                                        </a>
-                                        
-                  
-                                    </td>
-                              </tr>
                               <tr>
-                                  <td class="text-truncate">
-                                     2
-                                  </td>
-                                  <td class="text-truncate">
-                                      MFTX000002
-                                  </td>
-                                  <td class="text-truncate">
-                                      SOS Medical
-                                  </td>
-                                  <td class="text-truncate">
-                                      07/01/2022
-                                  </td>
-                                  <td class="text-truncate">
-                                      Guinea
-                                  </td>
-                                  
-                                  <td class="text-truncate">3 000 000 GNF</td>
-                                  <td class="text-truncate">2 000 000 GNF</td>
-
-                                  <td>
-                                        <button type="button" class="btn btn-sm btn-outline-warning round">Active</button>
+                                @foreach ($fundraisers as $fundraiser )
+                            
+                                
+                                
+                                    {{-- <td class="text-truncate">
+                                       {{$fundraiser->reference_id}}
+                                    </td> --}}
+                                    <td class="text-truncate">
+                                       {{$fundraiser->country}}
                                     </td>
-                                  <td>
-                                        <a href="view-fundraiser.html" class="color-black p-0" data-original-title="" title="View">
-                                            <i class="fa fa-eye font-medium-3 mr-2"></i>
-                                        </a>
-                                        <a href="edit-fundraiser.html" class="color-black p-0" data-original-title="" title="Edit">
-                                            <i class="fa fa-pencil font-medium-3 mr-2"></i>
-                                        </a>
-                                        <a class="color-black p-0" data-original-title="" title="close" data-toggle="modal" data-target="#default1">
-                                            <i class="fa fa-lock font-medium-3 mr-2"></i>
-                                        </a>
-                                        <a class="color-red p-0" data-original-title="" title="Delete" data-toggle="modal" data-target="#default">
-                                            <i class="fa fa-trash-o font-medium-3 mr-2"></i>
-                                        </a>
-                  
+                                    <td class="text-truncate">
+                                        {{$fundraiser->name}}
                                     </td>
-                              </tr>
-                              <tr>
-                                  <td class="text-truncate">
-                                     3
-                                  </td>
-                                  <td class="text-truncate">
-                                      MFTX000003
-                                  </td>
-                                  <td class="text-truncate">
-                                      SOS Medical
-                                  </td>
-                                  <td class="text-truncate">
-                                      07/01/2022
-                                  </td>
-                                  <td class="text-truncate">
-                                      Guinea
-                                  </td>
-                                  
-                                  <td class="text-truncate">3 000 000 GNF</td>
-                                  <td class="text-truncate">2 000 000 GNF</td>
-
-                                  <td>
-                                        <button type="button" class="btn btn-sm btn-outline-warning round">Not Active</button>
+                                    <td class="text-truncate">
+                                        {{$fundraiser->location}}
                                     </td>
-                                  <td>
-                                        <a href="view-fundraiser.html" class="color-black p-0" data-original-title="" title="View">
-                                            <i class="fa fa-eye font-medium-3 mr-2"></i>
-                                        </a>
-                                        <a href="edit-fundraiser.html" class="color-black p-0" data-original-title="" title="Edit">
-                                            <i class="fa fa-pencil font-medium-3 mr-2"></i>
-                                        </a>
-                                        <a class="color-black p-0" data-original-title="" title="close" data-toggle="modal" data-target="#default1">
-                                            <i class="fa fa-lock font-medium-3 mr-2"></i>
-                                        </a>
-                                        <a class="color-red p-0" data-original-title="" title="Delete" data-toggle="modal" data-target="#default">
-                                            <i class="fa fa-trash-o font-medium-3 mr-2"></i>
-                                        </a>
-                  
+                                    <td class="text-truncate">
+                                        {{$fundraiser->why_fundraising}}
                                     </td>
-                              </tr>
-                              <tr>
-                                  <td class="text-truncate">
-                                     4
-                                  </td>
-                                  <td class="text-truncate">
-                                      MFTX000004
-                                  </td>
-                                  <td class="text-truncate">
-                                      SOS Medical
-                                  </td>
-                                  <td class="text-truncate">
-                                      07/01/2022
-                                  </td>
-                                  <td class="text-truncate">
-                                      Guinea
-                                  </td>
-                                  
-                                  <td class="text-truncate">3 000 000 GNF</td>
-                                  <td class="text-truncate">2 000 000 GNF</td>
-
-                                  <td>
-                                        <button type="button" class="btn btn-sm btn-outline-warning round">Active</button>
-                                    </td>
-                                  <td>
-                                        <a href="view-fundraiser.html" class="color-black p-0" data-original-title="" title="View">
-                                            <i class="fa fa-eye font-medium-3 mr-2"></i>
-                                        </a>
-                                        <a href="edit-fundraiser.html" class="color-black p-0" data-original-title="" title="Edit">
-                                            <i class="fa fa-pencil font-medium-3 mr-2"></i>
-                                        </a>
-                                        <a class="color-black p-0" data-original-title="" title="close" data-toggle="modal" data-target="#default1">
-                                            <i class="fa fa-lock font-medium-3 mr-2"></i>
-                                        </a>
-                                        <a class="color-red p-0" data-original-title="" title="Delete" data-toggle="modal" data-target="#default">
-                                            <i class="fa fa-trash-o font-medium-3 mr-2"></i>
-                                        </a>
-                  
-                                    </td>
-                              </tr>
-                              <tr>
-                                  <td class="text-truncate">
-                                     5
-                                  </td>
-                                  <td class="text-truncate">
-                                      MFTX000005
-                                  </td>
-                                  <td class="text-truncate">
-                                      SOS Medical
-                                  </td>
-                                  <td class="text-truncate">
-                                      07/01/2022
-                                  </td>
-                                  <td class="text-truncate">
-                                      Guinea
-                                  </td>
-                                  
-                                  <td class="text-truncate">3 000 000 GNF</td>
-                                  <td class="text-truncate">2 000 000 GNF</td>
-
-                                  <td>
-                                        <button type="button" class="btn btn-sm btn-outline-warning round"> Not Active</button>
-                                    </td>
-                                  <td>
-                                        <a href="view-fundraiser.html" class="color-black p-0" data-original-title="" title="View">
-                                            <i class="fa fa-eye font-medium-3 mr-2"></i>
-                                        </a>
-                                        <a href="edit-fundraiser.html" class="color-black p-0" data-original-title="" title="Edit">
-                                            <i class="fa fa-pencil font-medium-3 mr-2"></i>
-                                        </a>
-                                        <a class="color-black p-0" data-original-title="" title="close" data-toggle="modal" data-target="#default1">
-                                            <i class="fa fa-lock font-medium-3 mr-2"></i>
-                                        </a>
-                                        <a class="color-red p-0" data-original-title="" title="Delete" data-toggle="modal" data-target="#default">
-                                            <i class="fa fa-trash-o font-medium-3 mr-2"></i>
-                                        </a>
-                  
-                                    </td>
-                              </tr>
-                              <tr>
-                                 <td class="text-truncate">
-                                     6
-                                  </td>
-                                  <td class="text-truncate">
-                                      MFTX000006
-                                  </td>
-                                  <td class="text-truncate">
-                                      SOS Medical
-                                  </td>
-                                  <td class="text-truncate">
-                                      07/01/2022
-                                  </td>
-                                  <td class="text-truncate">
-                                      Guinea
-                                  </td>
-                                  
-                                  <td class="text-truncate">3 000 000 GNF</td>
-                                  <td class="text-truncate">2 000 000 GNF</td>
-
-                                  <td>
-                                        <button type="button" class="btn btn-sm btn-outline-warning round">Active</button>
-                                    </td>
-                                  <td>
-                                        <a href="view-fundraiser.html" class="color-black p-0" data-original-title="" title="View">
-                                            <i class="fa fa-eye font-medium-3 mr-2"></i>
-                                        </a>
-                                        <a href="edit-fundraiser.html" class="color-black p-0" data-original-title="" title="Edit">
-                                            <i class="fa fa-pencil font-medium-3 mr-2"></i>
-                                        </a>
-                                        <a class="color-black p-0" data-original-title="" title="close" data-toggle="modal" data-target="#default1">
-                                            <i class="fa fa-lock font-medium-3 mr-2"></i>
-                                        </a>
-                                        <a class="color-red p-0" data-original-title="" title="Delete" data-toggle="modal" data-target="#default">
-                                            <i class="fa fa-trash-o font-medium-3 mr-2"></i>
-                                        </a>
-                  
-                                    </td>
-                              </tr>
-                              <tr>
-                                  <td class="text-truncate">
-                                     7
-                                  </td>
-                                  <td class="text-truncate">
-                                      MFTX000007
-                                  </td>
-                                  <td class="text-truncate">
-                                      SOS Medical
-                                  </td>
-                                  <td class="text-truncate">
-                                      07/01/2022
-                                  </td>
-                                  <td class="text-truncate">
-                                      Guinea
-                                  </td>
-                                  
-                                  <td class="text-truncate">3 000 000 GNF</td>
-                                  <td class="text-truncate">2 000 000 GNF</td>
-
-                                  <td>
-                                        <button type="button" class="btn btn-sm btn-outline-warning round">Active</button>
-                                    </td>
-                                  <td>
-                                        <a href="view-fundraiser.html" class="color-black p-0" data-original-title="" title="View">
-                                            <i class="fa fa-eye font-medium-3 mr-2"></i>
-                                        </a>
-                                        <a href="edit-fundraiser.html" class="color-black p-0" data-original-title="" title="Edit">
-                                            <i class="fa fa-pencil font-medium-3 mr-2"></i>
-                                        </a>
-                                        <a class="color-black p-0" data-original-title="" title="close" data-toggle="modal" data-target="#default1">
-                                            <i class="fa fa-lock font-medium-3 mr-2"></i>
-                                        </a>
-                                        <a class="color-red p-0" data-original-title="" title="Delete" data-toggle="modal" data-target="#default">
-                                            <i class="fa fa-trash-o font-medium-3 mr-2"></i>
-                                        </a>
-                  
-                                    </td>
+                                    
+                                    <td class="text-truncate">{{$fundraiser->fund_name}}</td>
+                                    <td class="text-truncate">{{$fundraiser->goal_amount}}</td>
+                                    <td class="text-truncate">{{$fundraiser->collecting_fund_for}}</td>
+                                    <td class="text-truncate">{{$fundraiser->fund_receive}}</td>
+                                    <td class="text-truncate">{{$fundraiser->fund_receive}}</td>
+                                    <td class="text-truncate">{{$fundraiser->bank_id}}</td>
+                                    <td class="text-truncate">{{$fundraiser->phone_no}}</td>
+                                    <td class="text-truncate">{{$fundraiser->fund_type}}</td>
+                                    <td class="text-truncate">{{$fundraiser->code}}</td>
+                                    <td class="text-truncate">{{$fundraiser->s_description}}</td>
+                                    <td class="text-truncate">{{$fundraiser->l_description}}</td>
+  
+                                    <td>
+                                          <button type="button" class="btn btn-sm btn-outline-warning round">Active</button>
+                                      </td>
+                                    <td>
+                                          <a href="view-fundraiser.html" class="color-black p-0" data-original-title="" title="View">
+                                              <i class="fa fa-eye font-medium-3 mr-2"></i>
+                                          </a>
+                                          <a href="edit-fundraiser.html" class="color-black p-0" data-original-title="" title="Edit">
+                                              <i class="fa fa-pencil font-medium-3 mr-2"></i>
+                                          </a>
+                                          <a class="color-black p-0" data-original-title="" title="close" data-toggle="modal" data-target="#default1">
+                                              <i class="fa fa-lock font-medium-3 mr-2"></i>
+                                          </a>
+                                          <a class="color-red p-0" data-original-title="" title="Delete" data-toggle="modal" data-target="#default">
+                                              <i class="fa fa-trash-o font-medium-3 mr-2"></i>
+                                          </a>
+                    
+                                      </td>
+                                      @endforeach
+                               
                               </tr>
 
                                 

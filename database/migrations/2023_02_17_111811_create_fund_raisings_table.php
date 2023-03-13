@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('reference_id')->nullable();
+
             $table->string('country');
             $table->string('why_fundraising');
             $table->string('fund_name')->nullable();
@@ -30,6 +31,7 @@ return new class extends Migration
             $table->text('l_description')->nullable();
             $table->string('banner_image')->nullable();
             $table->string('raiser_images')->nullable();
+            $table->string('status')->default(0);
             $table->timestamps();
         });
     }

@@ -16,12 +16,12 @@
     <title>Start GoFundMe</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/frontend/assets/favicons/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/frontend/assets/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/frontend/assets/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/frontend/assets/favicons/favicon-16x16.png">
-    <link rel="manifest" href="/frontend/assets/favicons/site.webmanifest">
-    <link rel="mask-icon" href="/frontend/assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="{{ asset('/frontend/assets/favicons/favicon.ico') }}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/frontend/assets/favicons/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/frontend/assets/favicons/favicon-16x16.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('/frontend/assets/favicons/favicon-32x32.png') }}">
+    <link rel="manifest" href="{{ asset('/frontend/assets/favicons/site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ asset('/frontend/assets/favicons/safari-pinned-tab.svg') }}" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
@@ -60,7 +60,7 @@
 
     <!-- ==================== Start Navbar ==================== -->
 
-    @include('Layouts.frontend-navbar')
+    @include('Layouts.balck-navbar')
 
     <!-- ==================== End Navbar ==================== -->
 
@@ -101,15 +101,15 @@
 
 
 @yield('scripts')
-<script src="/frontend/assets/js/jquery-3.6.0.min.js"></script>
-<script src="/frontend/assets/js/jquery-migrate-3.4.0.min.js"></script>
+<script src="{{ asset('/frontend/assets/js/jquery-3.6.0.min.js') }}"></script>
+<script src="{{ asset('/frontend/assets/js/jquery-migrate-3.4.0.min.js') }}"></script>
 
 <!-- plugins -->
-<script src="/frontend/assets/js/plugins.js"></script>
+<script src="{{ asset('/frontend/assets/js/plugins.js') }}"></script>
 
 <!-- particles -->
-<script src="/frontend/assets/js/particles.min.js"></script>
-<script src="/frontend/assets/js/stars.js"></script>
+<script src="{{ asset('/frontend/assets/js/particles.min.js') }}"></script>
+<script src="{{ asset('/frontend/assets/js/stars.js') }}"></script>
 
 <!-- custom scripts -->
 <script src="/frontend/assets/js/scripts.js"></script>

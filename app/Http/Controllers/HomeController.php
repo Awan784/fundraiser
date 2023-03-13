@@ -44,13 +44,14 @@ class HomeController extends Controller
     $validator = Validator::make($request->all(), [
             'country' => 'required',
             'name' => 'required',
-            'location' => 'required',
             'why_fundraising' => 'required',
         ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
         $FundRaising = new FundRaising;
-        $FundRaising->name = $request->name;
+        $FundRaising->fund_name = $request->name;
         $FundRaising->country = $request->country;
-        $FundRaising->location = $request->location;
         $FundRaising->why_fundraising = $request->why_fundraising;
         $FundRaising->save();
         session()->put('first_form_id', $FundRaising->id);
@@ -215,7 +216,7 @@ class HomeController extends Controller
     $form->user_id = $user->id;
     $form->save();
 
- return view('frontend.gofund-step6');
+          return redirect()->route('otp-verification')->with('success', 'Otp Send On Email successfully.');
        } 
        catch (\Exception $e)
         {
@@ -228,9 +229,8 @@ class HomeController extends Controller
     if($request->otp == $otp) {
         Session::forget('otp');
         $Formid = session('first_form_id');
-        $formInfo = FundRaising::where('id',$Formid)->first();
 
-        return view('frontend.gofund-step7', compact('formInfo'));
+           return redirect()->route('gofund_done')->with('success', 'Congratulation Your Fundrasier Created successfully.');
     } else {
         $validatedData = $request->validate([
             'otp' => 'required',
@@ -238,9 +238,17 @@ class HomeController extends Controller
             'otp.required' => 'The OTP field is required.',
         ]);
 
-        return view('frontend.gofund-step6')->with(['error' => 'Incorrect OTP']);
+        return redirect()->back()->with(['error' => 'Incorrect OTP']);
     }
 }
+
+  public function gofundstep_done(){
+
+      $Formid = session('first_form_id');
+    $formInfo = FundRaising::where('id',$Formid)->first();
+    return view('frontend.gofund-step7', compact('formInfo'));
+
+  }
 
     public function gofund_login()
     {

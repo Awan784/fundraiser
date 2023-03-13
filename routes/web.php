@@ -50,6 +50,8 @@ Route::post('/fundRa/step',[HomeController::class,'gofundstep_three'])->name('go
 Route::post('/fundRa/step/three',[HomeController::class,'gofundstep_three_one'])->name('gofundstep-3.1');
 Route::post('/fundRa/step/four',[HomeController::class,'gofundstep_four'])->name('gofundstep-4');
 Route::get('/fundRa/step/five',[HomeController::class,'gofundstep_five'])->name('gofundstep-5');
+Route::get('/otp-verification', function () { return view('frontend.gofund-step6');})->name('otp-verification');
+Route::get('/fundRa/otp/done',[HomeController::class,'gofundstep_done'])->name('gofund_done');
 Route::post('/fundRa/otp/otp-login',[HomeController::class,'gofundstep_otp'])->name('gofund_otp');
 Route::post('/fundRa/otp/fund-login',[HomeController::class,'fund_login'])->name('fund_login');
 Route::post('/fundRa/step/seven',[HomeController::class,'gofundstep_seven'])->name('gofundstep-7');
@@ -66,9 +68,16 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/user-dashboard', function () { return view('user.index');})->name('user-dashboard');
 Route::get('/active/fundraiser', [UserController::class,'active_fudraiser'])->name('User-ActiveFundrasier');
 Route::get('/active/fundraiser/edit/{FundRaising:id}', [UserController::class,'edit_active_fudraiser'])->name('User-editActiveFundrasier');
-// Route::put('/active/fundraiser/form/{FundRaising:id}', [UserController::class,'update_active_fudraiser'])->name('form.update');
+Route::put('/active/fundraiser/form/{FundRaising:id}', [UserController::class,'update_active_fudraiser'])->name('activeFundraiser.update');
 Route::get('/active/fundraiser/form/{FundRaising:id}', [UserController::class,'show_active_fudraiser'])->name('User-ShowActiveFundrasier');
 Route::get('/user/closed/fundraiser',[UserController::class,'closed_fundraiser'])->name('User-ClosedFundrasier');
+Route::get('/user/communication',[UserController::class,'user_communication'])->name('User-Communications');
+Route::get('/user/contact-us',[UserController::class,'user_contact_us'])->name('User-contactUs');
+Route::post('/user/contact-us',[UserController::class,'contact_us'])->name('UserContactUs');
+Route::get('/user/withdrawals',[UserController::class,'user_withdrawals'])->name('User-withdrawals');
+Route::get('/user/NewWithdrawals',[UserController::class,'user_NewWithdrawals'])->name('User-NewWithdrawals');
+
+
 Route::get('/user/profile',[UserController::class,'user_profile'])->name('User-Profile');
 Route::get('/user/active/logout', [UserController::class,'logout'])->name('User-logout');
 Route::delete('/user/activefund/{id}/delete', [UserController::class,'activefund_delete'])->name('activefund_delete');

@@ -17,7 +17,9 @@
           </div>
           <div class="card-body">
             <div class="px-3">
-              <form class="form form-horizontal">
+              <form class="form form-horizontal" action="{{ route('activeFundraiser.update', $editActive->id) }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
                 <div class="form-body">
                   <div class="row ">
                     <div class="col-md-6 mt-2">
@@ -38,10 +40,10 @@
                           </select>
                        
                       </div>
-                      <div class="form-group">
+                      {{-- <div class="form-group">
                         <label for="eventInput2">Where are you located? </label>
                         <input type="text" id="eventInput2" value="{{ $editActive->location }}" class="form-control" name="title" placeholder="Street # 1, house # 1 , Guinea, Africa" >
-                      </div>
+                      </div> --}}
                       <div class="form-group">
                         <label for="eventInput2">What best describes why you're fundraising?</label>
                         
@@ -72,15 +74,15 @@
                       
                       <div class="form-group">
                         <label for="eventInput2">What name would you like to give you fund? </label>
-                        <input type="text" id="eventInput2" class="form-control" name="title" placeholder="SOS Medical" >
+                        <input type="text" id="eventInput2" value="{{ $editActive->fund_name }}" class="form-control" name="fund_name" placeholder="SOS Medical" >
                       </div>
-                      <div class="form-group">
+                      {{-- <div class="form-group">
                         <label for="eventInput2">What is your name? </label>
                         <input type="text" id="eventInput2" value="{{ $editActive->name }}" class="form-control" name="title" placeholder="MFTX000001">
-                      </div>
+                      </div> --}}
                       <div class="form-group">
                         <label for="eventInput2">What is your initial goal amount to raise? </label>
-                        <input type="text" id="eventInput2" value="{{ $editActive->goal_amount }}" class="form-control" name="title" placeholder="3.00.000.000 GNF" >
+                        <input type="text" id="eventInput2" value="{{ $editActive->goal_amount }}" class="form-control" name="goal_amount" placeholder="3.00.000.000 GNF" >
                       </div>
                       <div class="form-group">
                         <label for="eventInput2">Who are you collecting funds for?</label>
@@ -109,8 +111,11 @@
                     <div class="col-8">
                         <div class="form-group">
                             <label for="eventInput2">Fundraiser main banner image</label>
-                            <input type="file" id="eventInput2" class="form-control" name="title" placeholder="Street # 1, house # 1 , Guinea, Africa" >
-                    </div>
+                            <input type="file" id="eventInput2" class="form-control" name="banner_image" placeholder="Street # 1, house # 1 , Guinea, Africa" >
+                                 @error('banner_image')
+                                   <p class="text-sm">{{ $message }}</p>
+                                 @enderror
+                          </div>
                 </div>
                 <div class="col-4">
                     <div class="form-group">
@@ -124,7 +129,10 @@
                     <div class="col-8">
                         <div class="form-group">
                             <label for="eventInput2">Other Fundraiser images</label>
-                            <input type="file" id="eventInput2" class="form-control" name="title" placeholder="Street # 1, house # 1 , Guinea, Africa" >
+                            <input type="file" id="eventInput2" class="form-control" name="raiser_images[]" multiple >
+                              @error('raiser_images')
+                                   <p class="text-sm">{{ $message }}</p>
+                                 @enderror
                           </div>
                 </div>
                 <div class="col-4">
@@ -147,7 +155,7 @@
                     <div class="col-12">
                       <div class="form-group">
                         <label for="eventInput5">Short description of fundraiser.</label>
-                        <textarea id="donationinput7" rows="2" class="form-control square"  name="comments">{{ $editActive->s_description }}</textarea>
+                        <textarea id="donationinput7" rows="2" class="form-control square"  name="s_description">{{ $editActive->s_description }}</textarea>
                       </div>
                     </div>
                   </div>
@@ -155,7 +163,7 @@
                     <div class="col-12">
                       <div class="form-group">
                         <label for="eventInput5">Briefly describe why you are starting this fundraiser.</label>
-                        <textarea id="donationinput7" rows="4" class="form-control square" name="comments">{{ $editActive->l_description }}</textarea>
+                        <textarea id="donationinput7" rows="4" class="form-control square" name="l_description">{{ $editActive->l_description }}</textarea>
                       </div>
                     </div>
                   </div>
@@ -163,10 +171,10 @@
                 </div>
   
                 <div class="form-actions right">
-                  
-                  <a href="active-fundraiser.html" class="btn btn-success btn_black">
+        
+                  <button  type="submit" class="btn btn-success btn_black">
                     <i class="icon-note"></i> Save
-                  </a>
+                  </button>
                 </div>
               </form>
   

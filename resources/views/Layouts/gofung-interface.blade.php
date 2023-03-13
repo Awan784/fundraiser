@@ -60,7 +60,7 @@
 
     <!-- ==================== Start Navbar ==================== -->
 
-    @include('Layouts.frontend-navbar')
+    @include('Layouts.balck-navbar')
 
     <!-- ==================== End Navbar ==================== -->
 

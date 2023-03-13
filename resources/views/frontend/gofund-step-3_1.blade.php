@@ -62,9 +62,9 @@
                             
 
                             <div class="col-12 text-center pt-30">
-                                <button type="submit" id="submit_prog"  class="butn butn-md bg-dark-brown text-light radius-30">
+                                <button type="submit"   class="btn btn-md bg-success  text-light radius-30">
                                     <span class="text slide-up">Continue</span>
-                                    <span class="text slide-down">Continue</span>
+                                    
                                 </button>
                             </div>
                         </div>

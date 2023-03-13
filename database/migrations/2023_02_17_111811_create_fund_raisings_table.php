@@ -17,8 +17,6 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('reference_id')->nullable();
             $table->string('country')->nullable();
-            $table->string('name')->nullable();
-            $table->string('location')->nullable();
             $table->string('why_fundraising')->nullable();
             $table->string('fund_name')->nullable();
             $table->string('goal_amount')->nullable();
@@ -32,6 +30,7 @@ return new class extends Migration
             $table->text('l_description')->nullable();
             $table->string('banner_image')->nullable();
             $table->string('raiser_images')->nullable();
+            $table->string('status')->default(0);
             $table->timestamps();
         });
     }

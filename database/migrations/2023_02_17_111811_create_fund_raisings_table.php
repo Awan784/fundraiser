@@ -16,8 +16,9 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('reference_id')->nullable();
-            $table->string('country')->nullable();
-            $table->string('why_fundraising')->nullable();
+
+            $table->string('country');
+            $table->string('why_fundraising');
             $table->string('fund_name')->nullable();
             $table->string('goal_amount')->nullable();
             $table->string('collecting_fund_for')->nullable();

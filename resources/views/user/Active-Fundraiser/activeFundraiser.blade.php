@@ -72,6 +72,8 @@
                                                     <a href="{{ route('User-editActiveFundrasier',$active->id) }}" class="color-black p-0" data-original-title="" title="Edit">
                                                         <i class="fa fa-pencil font-medium-3 mr-2"></i>
                                                     </a>
+                                                    {{-- <input data-id="{{$active->id}}" class="toggle-class" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Approved" data-off="Rejected" {{ $active->status == 0 ? 'checked' : '' }}> --}}
+
                                                     <a class="color-black p-0" data-original-title="" title="close" data-toggle="modal" data-target="#default1">
                                                         <i class="fa fa-lock font-medium-3 mr-2"></i>
                                                     </a>
@@ -103,3 +105,14 @@
 
        
 @endsection
+{{-- @section('scripts')
+<script>
+$(function() {
+$(selector).click(function (e) { 
+    e.preventDefault();
+
+    
+});
+});
+</script>
+@endsection --}}

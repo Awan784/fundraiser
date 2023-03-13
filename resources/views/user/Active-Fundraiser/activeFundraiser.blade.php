@@ -77,14 +77,12 @@
                                                     <a class="color-black p-0" data-original-title="" title="close" data-toggle="modal" data-target="#default1">
                                                         <i class="fa fa-lock font-medium-3 mr-2"></i>
                                                     </a>
-                                                    <form action="{{ route('activefund_delete', $active->id) }}" method="POST">
-                                                      @csrf
-                                                      @method('delete')
-                                                      <button type="submit" ><i class="fa fa-trash-o font-medium-3 mr-2"></i></button>
-                                                  </form>
-                                                    {{-- <a class="color-red p-0" title="Delete" href="{{ route('activefund_delete',$active->id) }}">
-                                                        
-                                                    </a> --}}
+                                                 
+                                                    <a class="color-red p-0" href="{{route('activefund_delete',$active->id)}}" data-original-title=""
+                                                        title="Delete" >
+                                                        <i
+                                                            class="fa fa-trash-o font-medium-3 mr-2"></i>
+                                                    </a>
                                                     
                               
                                                 </td>

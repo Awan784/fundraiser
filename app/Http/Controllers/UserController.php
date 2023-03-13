@@ -120,13 +120,8 @@ class UserController extends Controller
         }
         public function activefund_delete($id)
         {  
-            try {
-                $item = FundRaising::findOrFail($id); 
-                $item->delete(); 
-                return redirect()->back()->with('success', 'Active fundraiser deleted successfully.'); 
-            } catch (\Exception $e) {
-                return redirect()->back()->with('error', 'Failed to delete item.');
-            }
+            $data=FundRaising::find($id)->delete();
+            return redirect()->back()->with('success','Deleted Successfully');
         }
         public function changePassword(Request $request)
             {

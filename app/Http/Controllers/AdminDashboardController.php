@@ -72,9 +72,29 @@ class AdminDashboardController extends Controller
         
         return view('admin.feature-topics-list');
     }
+    public function addTopic(){
+        
+        return view('admin.add-topic');
+    }
     public function commissions(){
         
         return view('admin.commissions');
+    }
+    public function withdrawls(){
+        
+        return view('admin.withdrawals');
+    }
+    public function websiteMessage(){
+        
+        return view('admin.website-messages');
+    }
+    public function report(){
+        
+        return view('admin.reports_list');
+    }
+    public function user(){
+        
+        return view('admin.users');
     }
     public function logout()
         {

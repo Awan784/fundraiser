@@ -2,10 +2,10 @@
 <html lang="en" class="loading">
   
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  
     <title>Mouliya Admin - Dashboard</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="../admin/app-assets/img/favicon.ico" />
@@ -14,13 +14,13 @@
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900%7CMontserrat:300,400,500,600,700,800,900" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../admin/app-assets/fonts/feather/style.min.css">
-    <link rel="stylesheet" type="text/css" href="../admin/app-assets/fonts/simple-line-icons/style.css">
-    <link rel="stylesheet" type="text/css" href="../admin/app-assets/fonts/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../admin/app-assets/vendors/css/perfect-scrollbar.min.css">
-    <link rel="stylesheet" type="text/css" href="../admin/app-assets/vendors/css/prism.min.css">
-    <link rel="stylesheet" type="text/css" href="../admin/app-assets/vendors/css/chartist.min.css">
-    <link rel="stylesheet" type="text/css" href="../admin/app-assets/css/app.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/fonts/feather/style.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/fonts/simple-line-icons/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/fonts/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/vendors/css/perfect-scrollbar.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/vendors/css/prism.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/vendors/css/chartist.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css/app.css')}}">
   </head>
   <body data-col="2-columns" class=" 2-columns ">
     <!-- ////////////////////////////////////////////////////////////////////////////-->
@@ -258,25 +258,25 @@
 
     
     <!-- BEGIN VENDOR JS-->
-    <script src="../admin/app-assets/vendors/js/core/jquery-3.3.1.min.js"></script>
-    <script src="../admin/app-assets/vendors/js/core/popper.min.js"></script>
-    <script src="../admin/app-assets/vendors/js/core/bootstrap.min.js"></script>
-    <script src="../admin/app-assets/vendors/js/perfect-scrollbar.jquery.min.js"></script>
-    <script src="../admin/app-assets/vendors/js/prism.min.js"></script>
-    <script src="../admin/app-assets/vendors/js/jquery.matchHeight-min.js"></script>
-    <script src="../admin/app-assets/vendors/js/screenfull.min.js"></script>
-    <script src="../admin/app-assets/vendors/js/pace/pace.min.js"></script>
+    <script src="{{asset('/admin/app-assets/vendors/js/core/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{asset('/admin/app-assets/vendors/js/core/popper.min.js')}}"></script>
+    <script src="{{asset('/admin/app-assets/vendors/js/core/bootstrap.min.js')}}"></script>
+    <script src="{{asset('/admin/app-assets/vendors/js/perfect-scrollbar.jquery.min.js')}}"></script>
+    <script src="{{asset('/admin/app-assets/vendors/js/prism.min.js')}}"></script>
+    <script src="{{asset('/admin/app-assets/vendors/js/jquery.matchHeight-min.js')}}"></script>
+    <script src="{{asset('/admin/app-assets/vendors/js/screenfull.min.js')}}"></script>
+    <script src="{{asset('/admin/app-assets/vendors/js/pace/pace.min.js')}}"></script>
     <!-- BEGIN VENDOR JS-->
     <!-- BEGIN PAGE VENDOR JS-->
-    <script src="../admin/app-assets/vendors/js/chartist.min.js"></script>
+    <script src="{{asset('/admin/app-assets/vendors/js/chartist.min.js')}}"></script>
     <!-- END PAGE VENDOR JS-->
     <!-- BEGIN CONVEX JS-->
-    <script src="../admin/app-assets/js/app-sidebar.js"></script>
-    <script src="../admin/app-assets/js/notification-sidebar.js"></script>
-    <script src="../admin/app-assets/js/customizer.js"></script>
+    <script src="{{asset('/admin/app-assets/js/app-sidebar.js')}}"></script>
+    <script src="{{asset('/admin/app-assets/js/notification-sidebar.js')}}"></script>
+    <script src="{{asset('/admin/app-assets/js/customizer.js')}}"></script>
     <!-- END CONVEX JS-->
     <!-- BEGIN PAGE LEVEL JS-->
-    <script src="../admin/app-assets/js/dashboard-ecommerce.js"></script>
+    <script src="{{asset('/admin/app-assets/js/dashboard-ecommerce.js')}}"></script>
     <!-- END PAGE LEVEL JS-->
   </body>
 

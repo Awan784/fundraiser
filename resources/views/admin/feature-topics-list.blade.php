@@ -80,7 +80,7 @@
                             <div class="card-header">
                                 <div class="card-title-wrap bar-success">
                                     <h4 class="card-title">Featured Topic list</h4>
-                                    <a href="add-topic.html" class="btn  btn-add btn-round btn-min-width add-button-mobile  mb-2 btn-outline-bitbucket">
+                                    <a href="{{route('add-topic')}}" class="btn  btn-add btn-round btn-min-width add-button-mobile  mb-2 btn-outline-bitbucket">
                                     <span class="fa fa-plus"></span> Add Topic</a>
                                 </div>
 
@@ -245,25 +245,25 @@
 
     
     <!-- BEGIN VENDOR JS-->
-    <script src="{{ asset('/app-assets/vendors/js/core/jquery-3.3.1.min.js')}}"></script>
-    <script src="{{ asset('/app-assets/vendors/js/core/popper.min.js')}}"></script>
-    <script src="{{ asset('/app-assets/vendors/js/core/bootstrap.min.js')}}"></script>
-    <script src="{{ asset('/app-assets/vendors/js/perfect-scrollbar.jquery.min.js')}}"></script>
-    <script src="{{ asset('/app-assets/vendors/js/prism.min.js')}}"></script>
-    <script src="{{ asset('/app-assets/vendors/js/jquery.matchHeight-min.js')}}"></script>
-    <script src="{{ asset('/app-assets/vendors/js/screenfull.min.js')}}"></script>
-    <script src="{{ asset('/app-assets/vendors/js/pace/pace.min.js')}}"></script>
+    <script src="{{ asset('admin/app-assets/vendors/js/core/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{ asset('admin/app-assets/vendors/js/core/popper.min.js')}}"></script>
+    <script src="{{ asset('admin/app-assets/vendors/js/core/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('admin/app-assets/vendors/js/perfect-scrollbar.jquery.min.js')}}"></script>
+    <script src="{{ asset('admin/app-assets/vendors/js/prism.min.js')}}"></script>
+    <script src="{{ asset('admin/app-assets/vendors/js/jquery.matchHeight-min.js')}}"></script>
+    <script src="{{ asset('admin/app-assets/vendors/js/screenfull.min.js')}}"></script>
+    <script src="{{ asset('admin/app-assets/vendors/js/pace/pace.min.js')}}"></script>
     <!-- BEGIN VENDOR JS-->
     <!-- BEGIN PAGE VENDOR JS-->
-    <script src="{{ asset('/app-assets/vendors/js/datatable/datatables.min.js')}}"></script>
+    <script src="{{ asset('admin/app-assets/vendors/js/datatable/datatables.min.js')}}"></script>
     <!-- END PAGE VENDOR JS-->
     <!-- BEGIN CONVEX JS-->
-    <script src="{{ asset('/app-assets/js/app-sidebar.js')}}"></script>
-    <script src="{{ asset('/app-assets/js/notification-sidebar.js')}}"></script>
-    <script src="{{ asset('/app-assets/js/customizer.js')}}"></script>
+    <script src="{{ asset('admin/app-assets/js/app-sidebar.js')}}"></script>
+    <script src="{{ asset('admin/app-assets/js/notification-sidebar.js')}}"></script>
+    <script src="{{ asset('admin/app-assets/js/customizer.js')}}"></script>
     <!-- END CONVEX JS-->
     <!-- BEGIN PAGE LEVEL JS-->
-    <script src="{{ asset('/app-assets/js/data-tables/datatable-basic.js')}}"></script>
+    <script src="{{ asset('admin/app-assets/js/data-tables/datatable-basic.js')}}"></script>
   </body>
 
 </html>

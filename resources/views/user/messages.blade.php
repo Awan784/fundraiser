@@ -8,7 +8,7 @@
                 <div class="card-header">
                     <div class="card-title-wrap bar-success">
                         <h4 class="card-title">Communications</h4>
-                        <a href="new-messages.html" class="btn  btn-add btn-round btn-min-width add-button-mobile mb-2 btn-outline-bitbucket">
+                        <a href="{{ route('new-message') }}" class="btn  btn-add btn-round btn-min-width add-button-mobile mb-2 btn-outline-bitbucket">
                         <span class="fa fa-plus"></span> New Communication</a>
                     </div>
                 </div>

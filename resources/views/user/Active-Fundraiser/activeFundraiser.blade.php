@@ -19,7 +19,7 @@
                             </div>
                             <div class="card-body collapse show">
                                 <div class="card-block card-dashboard">
-                                    <table class="table  zero-configuration table-responsive">
+                                    <table class="table  zero-configuration table-responsive " >
                                         <thead>
                                             <tr> 
                                               <th class="border-top-0">#</th>                          
@@ -42,7 +42,7 @@
                                           @php
                                           $id++;
                                       @endphp
-                                            <tr>
+                                            <tr >
                                               <td class="text-truncate">
                                                 {{ $id }}
                                               </td>
@@ -74,7 +74,7 @@
                                                     </a>
                                                     {{-- <input data-id="{{$active->id}}" class="toggle-class" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Approved" data-off="Rejected" {{ $active->status == 0 ? 'checked' : '' }}> --}}
 
-                                                    <a class="color-black p-0" data-original-title="" title="close" data-toggle="modal" data-target="#default1">
+                                                    <a class="color-black p-0 status" data-original-title="" data-id="{{ $active->id }}" title="close" data-toggle="modal" data-target="#default1">
                                                         <i class="fa fa-lock font-medium-3 mr-2"></i>
                                                     </a>
                                                  
@@ -84,7 +84,7 @@
                                                             class="fa fa-trash-o font-medium-3 mr-2"></i>
                                                     </a>
                                                     
-                              
+                                                    <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                                                 </td>
                                           </tr>
 
@@ -103,14 +103,37 @@
 
        
 @endsection
-{{-- @section('scripts')
+@section('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 <script>
 $(function() {
-$(selector).click(function (e) { 
+$('.status').click(function (e) { 
+    var el = this;
+    var id = $(this).data('id');
+    var url = '/activeFundraiser/' + id + '/status';
+    var data = {
+        "_token": $('#token').val()
+    };
     e.preventDefault();
+     $.ajax({
+        url: url,
+        type: 'PUT',
+        data :data,
+        dataType: 'json',
+        success: function(response) {
+         
+            // Update the status button text
+            $(el).closest('tr').fadeOut(800, function(){
+                  $(this).remove();
+                });
+                
+               
 
+        }
+    });
     
 });
 });
 </script>
-@endsection --}}
+@endsection

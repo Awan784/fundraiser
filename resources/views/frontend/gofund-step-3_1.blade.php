@@ -50,8 +50,8 @@
                                    
                                    <div class="form-group has-error has-danger mb-30 ">
                                     
-                                       <input type="checkbox" name="prog" class="checkboxterms" value="">Do you agree all the <span class="underline"> <a href="terms.html">terms and conditions</a></span>
-                                   </div>
+                                    <input type="checkbox" name="prog" class="checkboxterms" value="">Do you agree all the <span class="underline"> <a href="terms.html">terms and conditions</a></span>
+                                </div>
                                </div>
 
                                
@@ -62,7 +62,7 @@
                             
 
                             <div class="col-12 text-center pt-30">
-                                <button type="submit"   class="btn btn-md bg-success  text-light radius-30">
+                                <button type="submit"  id="submit_prog" class="btn btn-md bg-success  text-light radius-30">
                                     <span class="text slide-up">Continue</span>
                                     
                                 </button>

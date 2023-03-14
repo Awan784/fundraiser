@@ -12,7 +12,9 @@ class FundRaising extends Model
 
     public $fillable = [
         'country',
-        'fund_name'
+        'fund_name',
+        'reference_id',
+
     ];
 
 }

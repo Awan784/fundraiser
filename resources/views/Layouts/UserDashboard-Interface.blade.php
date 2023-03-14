@@ -13,6 +13,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900%7CMontserrat:300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('/user/app-assets/fonts/feather/style.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/user/app-assets/fonts/simple-line-icons/style.css') }}">
@@ -43,9 +44,10 @@
 </div>
 </div>
     <!-- ////////////////////////////////////////////////////////////////////////////-->
-
+    @yield('scripts')
     
     <!-- BEGIN VENDOR JS-->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="{{ asset('/user/app-assets/vendors/js/core/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('/user/app-assets/vendors/js/core/popper.min.js') }}"></script>
     <script src="{{ asset('/user/app-assets/vendors/js/core/bootstrap.min.js') }}"></script>

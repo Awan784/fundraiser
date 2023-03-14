@@ -41,7 +41,36 @@
 </head>
 
 <body class="index-bus1">
-    <div class="se-pre-con"></div>
+    
+    <div class="se-pre-con d-none d-sm-block">
+        <div style="text-align: center !important;">   
+            <p class="d-none d-sm-block" style="position: fixed; bottom: 65px; width:100%; font-size: 15px; text-align: center">from</p>
+            <img src="{{ asset('frontend/assets/img/mftx-new.jpg') }}" class="d-none d-sm-block" style="position: fixed; width:80px; position: fixed;
+            top: 92%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, 0%);
+            -ms-transform: translate(-50%, 0%);
+            -webkit-transform: translate(-50%, 0%);
+            -moz-transform: translate(-50%, 0%);
+            -o-transform: translate(-50%, 0%);">
+        </div> 
+       </div>
+    <div class="se-pre-con1 d-block d-sm-none">
+        <div style="text-align: center !important;">   
+            <p class="d-block d-sm-none" style="position: fixed; bottom: 55px; width:100%; font-size: 15px; text-align: center">from</p>
+            <img src="{{ asset('frontend/assets/img/mftx-new.jpg') }}" class="d-block d-sm-none " style="  width:80px; 
+             position: fixed;
+            top: 92.5%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, 0%);
+            -ms-transform: translate(-50%, 0%);
+            -webkit-transform: translate(-50%, 0%);
+            -moz-transform: translate(-50%, 0%);
+            -o-transform: translate(-50%, 0%);">
+        </div> 
+       </div>
 
 
 
@@ -116,7 +145,12 @@
 <script type="text/javascript">
     $(window).load(function() {
     // Animate loader off screen
-    $(".se-pre-con").fadeOut("slow");;
+    window.setTimeout(function(){ 
+            $('.se-pre-con').attr('style', 'display: none !important');
+            }, 500);
+            window.setTimeout(function(){ 
+            $('.se-pre-con1').attr('style', 'display: none !important');
+            }, 500);
 });
 </script>
 </body>

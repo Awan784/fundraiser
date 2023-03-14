@@ -38,7 +38,7 @@ class UserController extends Controller
             $id = Auth::id();
             $userName = auth()->user()->full_name;
             $Active_fundrasier = DB::table('fund_raisings')
-            ->whereNotNull('id')->where('user_id',$id)
+            ->whereNotNull('id')->where('user_id',$id)->where('status',0)
             ->get();
             return view('user.Active-Fundraiser.activeFundraiser' ,compact('Active_fundrasier','userName'));
         }
@@ -103,8 +103,13 @@ class UserController extends Controller
 
         public function closed_fundraiser()
         {
+            $id = Auth::id();
+            $userName = auth()->user()->full_name;
+            $Close_fundrasier = DB::table('fund_raisings')
+            ->whereNotNull('id')->where('user_id',$id)->where('status',1)
+            ->get();
 
-            return view('user.closed-user-fundraiser');
+            return view('user.closed-user-fundraiser' , compact('Close_fundrasier'));
         }
 
         public function user_profile()
@@ -117,6 +122,13 @@ class UserController extends Controller
             Auth::logout();
             Session::flush();
             return redirect()->route('frontend-index');
+        }
+        public function updateStatus($id)
+        {
+            $user = FundRaising::findOrFail($id);
+            $user->status = !$user->status;
+            $user->save();
+            return response()->json(['status' => $user->status]);
         }
         public function activefund_delete($id)
         {  
@@ -146,6 +158,10 @@ class UserController extends Controller
             {
                
                 return view('user.messages');
+            }
+            public function new_message(){
+
+                return view('user.new-messages');
             }
             public function user_contact_us()
             {

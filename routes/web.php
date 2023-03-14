@@ -67,11 +67,13 @@ Route::post('/user/dashoard/', [UserController::class,'login'])->name('userDashb
 Route::middleware(['auth'])->group(function () {
 Route::get('/user-dashboard', function () { return view('user.index');})->name('user-dashboard');
 Route::get('/active/fundraiser', [UserController::class,'active_fudraiser'])->name('User-ActiveFundrasier');
+Route::put('/activeFundraiser/{id}/status', [UserController::class,'updateStatus']);
 Route::get('/active/fundraiser/edit/{FundRaising:id}', [UserController::class,'edit_active_fudraiser'])->name('User-editActiveFundrasier');
 Route::put('/active/fundraiser/form/{FundRaising:id}', [UserController::class,'update_active_fudraiser'])->name('activeFundraiser.update');
 Route::get('/active/fundraiser/form/{FundRaising:id}', [UserController::class,'show_active_fudraiser'])->name('User-ShowActiveFundrasier');
 Route::get('/user/closed/fundraiser',[UserController::class,'closed_fundraiser'])->name('User-ClosedFundrasier');
 Route::get('/user/communication',[UserController::class,'user_communication'])->name('User-Communications');
+Route::get('/user/new-message',[UserController::class,'new_message'])->name('new-message');
 Route::get('/user/contact-us',[UserController::class,'user_contact_us'])->name('User-contactUs');
 Route::post('/user/contact-us',[UserController::class,'contact_us'])->name('UserContactUs');
 Route::get('/user/withdrawals',[UserController::class,'user_withdrawals'])->name('User-withdrawals');

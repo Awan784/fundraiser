@@ -92,7 +92,9 @@
     max-width: 1170px;
   }
 }
-
+.contact-crv form .checkboxterms{
+  width: 5% !important;
+}
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
   padding-right: 15px;
   padding-left: 15px;
@@ -9338,6 +9340,9 @@ header.simple-header .path a:after {
   width: 100%;
   height: 100%;
 }
+.contact-crv form .checkboxterms{
+  width: 3% ;
+}
 
 .side-bar .widget.last-post-thum .item .img img {
   width: 100%;
@@ -11397,6 +11402,19 @@ if it's not present, don't show loader */
   height: 100%;
   z-index: 9999;
   background: url("../img/loader.png") center no-repeat #fff;
+}
+.se-pre-con1 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url("../img/logowebsite.png") center no-repeat #fff;
+/*    background-size: 62px 70px;*/
+  background-size: 80px 90px;
+
+
 }
 
 

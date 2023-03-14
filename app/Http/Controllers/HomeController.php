@@ -159,11 +159,14 @@ class HomeController extends Controller
 
             $imageName = strtolower(trim($request->banner_image->getClientOriginalExtension()));
             $fileName = time() . rand(100, 999) . '.' . $imageName;
-            $request->banner_image->move(public_path() .'/bannerImages/', $fileName);
+            $uploaded_path = 'public/bannerImages/';
+            $image_url = $uploaded_path . $fileName;
+            $request->banner_image->move($uploaded_path ,$fileName);
+            // move(public_path() .'/bannerImages/', $fileName);
         }
         $Formid = session('first_form_id');
         $form = FundRaising::find($Formid);
-        $form->banner_image = 'bannerImages/'. $fileName;
+        $form->banner_image = 'public/bannerImages/'. $fileName;
         $form->raiser_images = implode('|' ,$image);
         $form->save();
         $preview = FundRaising::where('id',$Formid)->first();
@@ -179,17 +182,19 @@ class HomeController extends Controller
     }
     public function gofundstep_otp(Request $request){
     
-     try{
+    
         $validator = Validator::make($request->all(), [
             'full_name' => 'required',
             'email' => 'required|unique:users,email',
-            'username' => 'required',
-            'telephone' => 'required',
+            'telephone' => 'required|min:11',
+            'confirm_telephone' => 'required_with:telephone|same:telephone|min:11',
             'password' => 'min:6',
             'confirm_password' => 'required_with:password|same:password|min:6'
         
         ]);
-
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
 
     $user = User::create([
         'full_name' => $request->full_name,
@@ -217,11 +222,7 @@ class HomeController extends Controller
     $form->save();
 
           return redirect()->route('otp-verification')->with('success', 'Otp Send On Email successfully.');
-       } 
-       catch (\Exception $e)
-        {
-                return redirect()->back()->withErrors($validator)->withInput();
-        }
+    
     }
    public function gofundstep_seven(Request $request)
 {

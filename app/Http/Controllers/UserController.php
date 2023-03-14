@@ -163,11 +163,17 @@ class UserController extends Controller
 
                 return view('user.new-messages');
             }
-            public function user_contact_us()
+            public function user_chat()
             {
               
                 return view('user.user-contact-us');
             }
+ 
+            public function user_contributions(){
+
+                return view('user.contributions');
+            }
+             
             public function contact_us(Request $request)
             {
                 $validator = Validator::make($request->all(), [

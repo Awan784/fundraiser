@@ -74,7 +74,8 @@ Route::get('/active/fundraiser/form/{FundRaising:id}', [UserController::class,'s
 Route::get('/user/closed/fundraiser',[UserController::class,'closed_fundraiser'])->name('User-ClosedFundrasier');
 Route::get('/user/communication',[UserController::class,'user_communication'])->name('User-Communications');
 Route::get('/user/new-message',[UserController::class,'new_message'])->name('new-message');
-Route::get('/user/contact-us',[UserController::class,'user_contact_us'])->name('User-contactUs');
+Route::get('/user/chat',[UserController::class,'user_chat'])->name('User-chat');
+Route::get('/user/contributions',[UserController::class,'user_contributions'])->name('User-contributions');
 Route::post('/user/contact-us',[UserController::class,'contact_us'])->name('UserContactUs');
 Route::get('/user/withdrawals',[UserController::class,'user_withdrawals'])->name('User-withdrawals');
 Route::get('/user/NewWithdrawals',[UserController::class,'user_NewWithdrawals'])->name('User-NewWithdrawals');

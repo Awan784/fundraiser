@@ -14140,9 +14140,9 @@ input:focus ~ .bg-info {
 }
 
 .btn-info {
-  background-color : #1E9FF2 !important;
+  background-color : #4B7134 !important;
   color : #FFFFFF !important;
-  border-color : #1E9FF2;
+  border-color : #4B7134;
 }
 .btn-info.active {
   background-color : #0D8DDF !important;
@@ -41062,7 +41062,7 @@ body.chat-page .main-panel {
   line-height : 1.15;
 }
 .chat-application .chat-app-window {
-  background : url('../img/pages/sativa.png');
+/*  background : url('../img/pages/sativa.png');*/
   margin-left : 300px;
   padding : 20px 30px;
   overflow-y : scroll;
@@ -41096,7 +41096,7 @@ body.chat-page .main-panel {
   margin : 0 20px 10px 0;
   clear : both;
   color : #FFFFFF;
-  background-color : #1E9FF2;
+  background-color : #4B7134;
   border-radius : 4px;
 }
 .chat-application .chats .chat-body .chat-content:before {

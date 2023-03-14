@@ -73,6 +73,24 @@
   .app-image-mobile{
     width: 60%;
   }
+  .price-mobile{
+    color: #4e7335;
+  }
+  .mobile-font{
+    font-size: 13px !important;
+  }
+  .mobile-title-font{
+    font-size: 12px !important;
+  }
+  .contact-crv form .checkboxterms{
+    width: 10% !important;
+  }
+  .orange-money-img{
+    padding-top: 0px !important;
+  }
+  /*Loader Css*/
+
+  
 }
 
 @media screen and (max-width: 576px) {
@@ -92,9 +110,7 @@
     max-width: 1170px;
   }
 }
-.contact-crv form .checkboxterms{
-  width: 5% !important;
-}
+
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
   padding-right: 15px;
   padding-left: 15px;
@@ -717,7 +733,7 @@ img.left {
 }
 
 .fz-16 {
-  font-size: 16px !important;
+  font-size: 16px;
 }
 
 .fz-18 {
@@ -2112,8 +2128,8 @@ img.left {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  height: 44px;
-  width: 44px;
+  height: 50px;
+  width: 50px;
   cursor: pointer;
   display: block;
   border-radius: 50px;
@@ -2142,14 +2158,14 @@ img.left {
   font-family: 'Font Awesome 5 Free';
   content: '\f077';
   text-align: center;
-  line-height: 44px;
+  line-height: 50px;
   font-size: 13px;
   font-weight: 900;
   color: #ccc;
   left: 0;
   top: 0;
-  height: 44px;
-  width: 44px;
+  height: 50px;
+  width: 50px;
   cursor: pointer;
   display: block;
   z-index: 1;
@@ -9340,9 +9356,6 @@ header.simple-header .path a:after {
   width: 100%;
   height: 100%;
 }
-.contact-crv form .checkboxterms{
-  width: 3% ;
-}
 
 .side-bar .widget.last-post-thum .item .img img {
   width: 100%;
@@ -9929,6 +9942,10 @@ color: #4e7335 !important;
   transition: all .4s;
 }
 
+.contact-crv form .checkboxterms{
+  width: 3% ;
+}
+
 .contact-crv form button:hover {
   background: transparent;
   color: #3b3f82;
@@ -10382,9 +10399,13 @@ body.index-main .bg-gray {
 /* ====================== [ End Colors Skin  ] ====================== */
 /* ====================== [ Start Responsive ] ====================== */
 @media screen and (max-width: 991px) {
+  #particles-js{
+    display: none !important;
+  }
   .bg-img {
     background-position: center !important;
   }
+
   .md-mb10 {
     margin-bottom: 10px;
   }
@@ -11009,6 +11030,9 @@ body.index-main .bg-gray {
   body.index-arch .testim-modrn2 .author-img {
     display: none;
   }
+  .orange-money-contribute-img{
+    width: 60px !important;
+  }
   body.index-arch .testim-modrn2 .cont {
     padding-left: 0;
   }
@@ -11039,6 +11063,9 @@ body.index-main .bg-gray {
   }
   body.nft-market .tab-links .item-link span {
     margin-right: 0 !important;
+  }
+  html, body {
+  overflow-x: hidden !important;
   }
   .progress-wrap {
     right: 15px;
@@ -11076,7 +11103,7 @@ body.index-main .bg-gray {
     padding-bottom: 20px !important;
   }
   .fixed-search .search-area .search-form {
-      bottom: -21px !important;
+      bottom: -15px !important;
     }
   .no-pt130-on-mobile{
     padding-top: 0px !important;
@@ -11094,7 +11121,7 @@ body.index-main .bg-gray {
     width: 50px;
     height: 50px;
     line-height: 50px;
-    top: 21px;
+    top: 16px;
   }
   .fixed-search .search-area {
     left: 15px;
@@ -11387,37 +11414,6 @@ select.form-control{
 }
 
 
-/*Loader Css*/
-
-/* Paste this css to your style sheet file or under head tag */
-/* This only works with JavaScript, 
-if it's not present, don't show loader */
-.no-js #loader { display: none;  }
-.js #loader { display: block; position: absolute; left: 100px; top: 0; }
-.se-pre-con {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-  background: url("../img/loader.png") center no-repeat #fff;
-}
-.se-pre-con1 {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-  background: url("../img/logowebsite.png") center no-repeat #fff;
-/*    background-size: 62px 70px;*/
-  background-size: 80px 90px;
-
-
-}
-
-
 
 .fixed-search-1 .search-area.search-on .search-icon {
   left: 400px;
@@ -11490,7 +11486,7 @@ if it's not present, don't show loader */
 }
 
 .fixed-search-1 .search-area .search-form form input {
-  font-size: 13px;
+  font-size: 14px;
   padding: 5px 60px 5px 25px;
   height: 60px;
   line-height: 50px;
@@ -11503,7 +11499,7 @@ if it's not present, don't show loader */
   transition: width .4s; 
   box-shadow: 0 20px 40px rgba(71, 67, 97, 0.09);
   border: 1px solid #ddd;
-  color: #ddd;
+  color: #4e7335;
 }
 
 .fixed-search-1 .search-area .search-form form button {
@@ -11565,6 +11561,9 @@ if it's not present, don't show loader */
 .btn-share{
   width: 107%;
 }
+.bg-light-brown{
+  background: #93c174;
+}
 .share-text{
   color: #4e7335;
   font-weight: bold;
@@ -11579,3 +11578,116 @@ if it's not present, don't show loader */
 .home-btn-bold{
   font-weight: 800 !important;
 }
+.home-blog-continue-reading{
+  font-size: 13px;
+font-weight: 500;
+position: relative;
+-webkit-transition: all .4s;
+-o-transition: all .4s;
+transition: all .4s;
+z-index: 3;
+text-decoration: underline;
+}
+
+
+.dm-width {
+   width: 300px;
+   margin: 0 auto;
+}
+
+.iphone-mockup {
+   position: relative;
+   z-index: 5;
+}
+
+.dm-device {
+    position: relative;
+    width: 100%;
+    padding-bottom:203.477897%;
+/*    margin-bottom: 20px;*/
+}
+
+.device {
+  position: absolute;
+    top: ;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-background-size: 100% 100%;
+    
+    background-repeat: no-repeat;
+/*          background-image: url(../img/iPhone-mockup.png);*/
+  background-size: cover;
+    background-position: center center;
+}
+
+.screen {
+   overflow: hidden;
+/*    position: absolute;*/
+    top: 2%;
+    bottom: 2%;
+    left: 2%;
+    right: 2%;
+/*    background-color: #E91E63;*/
+}
+
+.slider1 {
+  height: 100%;
+}
+.slider1 div {
+  height: 100%;
+}
+
+.slider__item {
+    font-size: 100px;
+    color: rgba(255,255,255,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.orange-money-img{
+  width: 60%;
+  padding-top: 60px;
+}
+.gr-light-green-bg {
+  background-image: -webkit-linear-gradient(110deg,#4e7335 0%, #fea21a 100%);
+  background-image: -o-linear-gradient(110deg,#4e7335 0%, #fea21a 100%);
+  background-image: linear-gradient(110deg,#4e7335 0%, #fea21a 100%);
+}
+.message-pic{
+  width: 50px !important;
+}
+body.modal-open {
+    overflow: visible;
+}
+ /* Paste this css to your style sheet file or under head tag */
+  /* This only works with JavaScript, 
+  if it's not present, don't show loader */
+  .no-js #loader { display: none;  }
+  .js #loader { display: block; position: absolute; left: 100px; top: 0; }
+  .se-pre-con {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url("../img/logowebsite.png") center no-repeat #fff;
+    background-size: 80px 90px;
+
+  }
+  .se-pre-con1 {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url("../img/logowebsite.png") center no-repeat #fff;
+/*    background-size: 62px 70px;*/
+    background-size: 80px 90px;
+
+
+  }

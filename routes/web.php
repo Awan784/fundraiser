@@ -27,7 +27,12 @@ Route::post('/admin/active-fundraiser/update-fundraiser',[AdminDashboardControll
 Route::get('/admin/active-fundraiser/delete-fundraiser/{id}',[AdminDashboardController::class,'deletefundraiser'])->name('delete-fundraiser');
 Route::get('/admin/close-fundraiser',[AdminDashboardController::class,'close_fundraiser'])->name('close-fundraiser');
 Route::get('/admin/feature-topics',[AdminDashboardController::class,'featuretopics'])->name('featuretopics');
+Route::get('/admin/edit-topic/{id}',[AdminDashboardController::class,'editTopic'])->name('edit-topic');
+Route::post('/admin/update-topic',[AdminDashboardController::class,'updateTopic'])->name('update-topic');
 Route::get('/admin/add-topic',[AdminDashboardController::class,'addTopic'])->name('add-topic');
+Route::post('/admin/create-topic',[AdminDashboardController::class,'createTopic'])->name('create-topic');
+Route::get('/admin/delete-topic/{id}',[AdminDashboardController::class,'deleteTopic'])->name('delete-topic');
+Route::get('/admin/view-topic/{id}',[AdminDashboardController::class,'viewTopic'])->name('view-topic');
 Route::get('/admin/commissions',[AdminDashboardController::class,'commissions'])->name('commissions');
 Route::get('/admin/withdrawls',[AdminDashboardController::class,'withdrawls'])->name('withdrawls');
 Route::get('/admin/website-message',[AdminDashboardController::class,'websiteMessage'])->name('website-message');

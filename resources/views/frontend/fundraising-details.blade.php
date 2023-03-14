@@ -77,10 +77,10 @@
 
                                                     <h6 class="text-u ls3 fz-13">Goal Acheived :  0 GNF</h6>
                                                     <div class="skill-progress">
-                                                        <div class="progres gr-green-light-bg" data-value="90%"></div>
+                                                        <div class="progres gr-green-light-bg" data-value="0%"></div>
                                                     </div>
                                                     <div class="flex mt-20">
-                                                        <h2 class="fw-200">85 <span class="fz-30">%</span></h2>
+                                                        <h2 class="fw-200">0 <span class="fz-30">%</span></h2>
                                                         <p>Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justoe.
                                                         </p>
                                                     </div>

@@ -169,7 +169,7 @@
 
                                         </div>
                                         <div class="mt-30">
-                                            <a href="gofund.html" class="butn butn-md green-dark-bg text-light radius-30">
+                                            <a href="{{  route('fundraiser') }}" class="butn butn-md green-dark-bg text-light radius-30">
                                                 <span class="text slide-up home-btn-bold">Start a Fundraiser</span>
                                                 <span class="text slide-down home-btn-bold">Start a Fundraiser</span>
                                             </a>
@@ -196,7 +196,7 @@
 
                                         </div>
                                         <div class="mt-30">
-                                            <a href="gofund.html" class="butn butn-md green-dark-bg text-light radius-30">
+                                            <a href="{{  route('fundraiser') }}" class="butn butn-md green-dark-bg text-light radius-30">
                                                 <span class="text slide-up home-btn-bold">Start a Fundraiser</span>
                                                 <span class="text slide-down home-btn-bold">Start a Fundraiser</span>
                                             </a>
@@ -223,7 +223,7 @@
 
                                         </div>
                                         <div class="mt-30">
-                                            <a href="gofund.html" class="butn butn-md green-dark-bg text-light radius-30">
+                                            <a href="{{  route('fundraiser') }}" class="butn butn-md green-dark-bg text-light radius-30">
                                                 <span class="text slide-up home-btn-bold">Start a Fundraiser</span>
                                                 <span class="text slide-down home-btn-bold">Start a Fundraiser</span>
                                             </a>
@@ -351,22 +351,22 @@
                             <div class="cont">
                                 <div class="info1">
                                     <div class="author">
-                                        <span>{{ $fund->name }}</span>
+                                        <span>{{ $fund->why_fundraising }}</span>
                                     </div>
                                     <div class="date">
                                         <span>{{ $fund->created_at->diffForHumans() }}</span>
                                     </div>
                                 </div>
-                                <div class="title mb-10"    >
-                                    <h5 class="mb-10"><a href="{{ route('fetchFund' , $fund->id) }}">{{  $fund->s_description }}</a></h5>
-                                    <p class="mb-10 text-truncate">{{  $fund->l_description }}</p>
+                                <div class="title mb-10">
+                                    <h5 class="mb-10"><a href="{{ route('fetchFund' , $fund->id) }}">  {{ $fund->fund_name }} </a></h5>
+                                    <p class="mb-10 text-truncate">{{  $fund->s_description }}</p>
                                 </div>
 
                                 <div class="skills-box full-width">
                                     <div class="skill-item">
                                         <h6 class="text-u ls3 fz-13">Goal Acheived : 0 %</h6>
                                         <div class="skill-progress">
-                                            <div class="progres gr-green-light-bg" data-value="85%"></div>
+                                            <div class="progres gr-green-light-bg" data-value="0%"></div>
                                         </div>
                                     </div>
                                 </div>

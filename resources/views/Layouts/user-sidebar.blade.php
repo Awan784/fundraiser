@@ -15,9 +15,11 @@
           </li>
           <li class="{{Request::url() == url('/user/communication') ? 'active' : ''}} nav-item"><a href="{{ route('User-Communications') }}"><i class="icon-speech"></i><span data-i18n="" class="menu-title">Communications</span></a>
           </li>
-          <li class="{{Request::url() == url('/user/contact-us') ? 'active' : ''}} nav-item"><a href="{{ route('User-contactUs') }}"><i class="icon-support"></i><span data-i18n="" class="menu-title">Contact Us</span></a>
+          <li class="{{Request::url() == url('/user/chat') ? 'active' : ''}} nav-item"><a href="{{ route('User-chat') }}"><i class="icon-support"></i><span data-i18n="" class="menu-title">Technical Chat</span></a>
           </li>
           <li class="{{Request::url() == url('/user/withdrawals') ? 'active' : ''}} nav-item"><a href="{{ route('User-withdrawals') }}"><i class="icon-paper-plane"></i><span data-i18n="" class="menu-title">Withdrawals</span></a>
+          </li>
+          <li class="{{Request::url() == url('/user/contributions') ? 'active' : ''}} nav-item"><a href="{{ route('User-contributions') }}"><i class="icon-like"></i><span data-i18n="" class="menu-title">Contributions</span></a>
           </li>
           <li class="{{Request::url() == url('/user/profile') ? 'active' : ''}} nav-item"><a href="{{ route('User-Profile') }}"><i class="icon-users"></i><span data-i18n="" class="menu-title">Profile</span></a>
           </li>

@@ -28,7 +28,7 @@ Route::get('/admin/active-fundraiser/delete-fundraiser/{id}',[AdminDashboardCont
 Route::get('/admin/close-fundraiser',[AdminDashboardController::class,'close_fundraiser'])->name('close-fundraiser');
 Route::get('/admin/feature-topics',[AdminDashboardController::class,'featuretopics'])->name('featuretopics');
 Route::get('/admin/commissions',[AdminDashboardController::class,'commissions'])->name('commissions');
-Route::get('/admin/logout', [AdminDashboardController::class,'logout'])->name('admdelete-fundraiserinlogout');
+Route::get('/admin/logout', [AdminDashboardController::class,'logout'])->name('adminlogout');
 });
 Route::get('/contact-us',[HomeController::class,'contact'])->name('contact');
 Route::get('/fundraising',[HomeController::class,'fundraising'])->name('fundraising');

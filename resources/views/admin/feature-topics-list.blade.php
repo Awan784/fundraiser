@@ -99,126 +99,41 @@
                                           </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                              <td class="text-truncate">
-                                                  1
-                                              </td>
-                                              <td class="text-truncate">
-                                                  ways to quickly increase traffic to your website building better ui designs layouts
-                                              </td>
-                                              <td class="text-truncate">
-                                                  07/01/2022
-                                              </td>
-                                              <td class="text-truncate">
-                                                  Admin
-                                              </td>
-
-                                              <td>
-                                                    <button type="button" class="btn btn-sm btn-outline-warning round">Active</button>
-                                                </td>
-                                              <td>
-                                                    <a href="view-feature-topic.html" class="color-black p-0" data-original-title="" title="View">
-                                                        <i class="fa fa-eye font-medium-3 mr-2"></i>
-                                                    </a>
-                                                    <a href="edit-topic.html" class="color-black p-0" data-original-title="" title="Edit">
-                                                        <i class="fa fa-pencil font-medium-3 mr-2"></i>
-                                                    </a>
-                                                    <a class="color-red p-0" data-original-title="" title="Delete" data-toggle="modal" data-target="#default">
-                                                        <i class="fa fa-trash-o font-medium-3 mr-2"></i>
-                                                    </a>
-                              
-                                                </td>
-                                          </tr>
+                                        @foreach ($topics as $key=> $topic )
+                        
+                                         
                                           <tr>
+                                            <td class="text-truncate">
+                                                {{$key+1}}
+                                            </td>
                                               <td class="text-truncate">
-                                                  2
+                                                  {{$topic->title}}
                                               </td>
+                                              
                                               <td class="text-truncate">
-                                                  ways to quickly increase traffic to your website building better ui designs layouts
-                                              </td>
-                                              <td class="text-truncate">
-                                                  07/01/2022
-                                              </td>
-                                              <td class="text-truncate">
-                                                  Admin
-                                              </td>
-
-                                              <td>
-                                                    <button type="button" class="btn btn-sm btn-outline-warning round"> Not Active</button>
-                                                </td>
-                                              <td>
-                                                    <a href="view-feature-topic.html" class="color-black p-0" data-original-title="" title="View">
-                                                        <i class="fa fa-eye font-medium-3 mr-2"></i>
-                                                    </a>
-                                                    <a href="edit-closed-fundraiser.html" class="color-black p-0" data-original-title="" title="Edit">
-                                                        <i class="fa fa-pencil font-medium-3 mr-2"></i>
-                                                    </a>
-                                                    <a class="color-red p-0" data-original-title="" title="Delete" data-toggle="modal" data-target="#default">
-                                                        <i class="fa fa-trash-o font-medium-3 mr-2"></i>
-                                                    </a>
-                              
-                                                </td>
-                                          </tr>
-                                          <tr>
-                                              <td class="text-truncate">
-                                                  3
-                                              </td>
-                                              <td class="text-truncate">
-                                                  ways to quickly increase traffic to your website building better ui designs layouts
-                                              </td>
-                                              <td class="text-truncate">
-                                                  07/01/2022
+                                                  {{$topic->created_at}}
                                               </td>
                                               <td class="text-truncate">
                                                   Admin
                                               </td>
 
                                               <td>
-                                                    <button type="button" class="btn btn-sm btn-outline-warning round">Active</button>
+                                                    <button type="button" class="btn btn-sm btn-outline-warning round">@if($topic->status==0) Not Active @else Active @endif</button>
                                                 </td>
                                               <td>
-                                                    <a href="view-feature-topic.html" class="color-black p-0" data-original-title="" title="View">
+                                                    <a href="{{route('view-topic',$topic->id)}}" class="color-black p-0" data-original-title="" title="View">
                                                         <i class="fa fa-eye font-medium-3 mr-2"></i>
                                                     </a>
-                                                    <a href="edit-closed-fundraiser.html" class="color-black p-0" data-original-title="" title="Edit">
+                                                    <a href="{{route('edit-topic',$topic->id)}}" class="color-black p-0" data-original-title="" title="Edit">
                                                         <i class="fa fa-pencil font-medium-3 mr-2"></i>
                                                     </a>
-                                                    <a class="color-red p-0" data-original-title="" title="Delete" data-toggle="modal" data-target="#default">
+                                                    <a href="{{route('delete-topic',$topic->id)}}" class="color-red p-0" data-original-title="" title="Delete" >
                                                         <i class="fa fa-trash-o font-medium-3 mr-2"></i>
                                                     </a>
                               
                                                 </td>
                                           </tr>
-                                          <tr>
-                                              <td class="text-truncate">
-                                                  4
-                                              </td>
-                                              <td class="text-truncate">
-                                                  ways to quickly increase traffic to your website building better ui designs layouts
-                                              </td>
-                                              <td class="text-truncate">
-                                                  07/01/2022
-                                              </td>
-                                              <td class="text-truncate">
-                                                  Admin
-                                              </td>
-
-                                              <td>
-                                                    <button type="button" class="btn btn-sm btn-outline-warning round">Not Active</button>
-                                                </td>
-                                              <td>
-                                                    <a href="view-feature-topic.html" class="color-black p-0" data-original-title="" title="View">
-                                                        <i class="fa fa-eye font-medium-3 mr-2"></i>
-                                                    </a>
-                                                    <a href="edit-closed-fundraiser.html" class="color-black p-0" data-original-title="" title="Edit">
-                                                        <i class="fa fa-pencil font-medium-3 mr-2"></i>
-                                                    </a>
-                                                    <a class="color-red p-0" data-original-title="" title="Delete" data-toggle="modal" data-target="#default">
-                                                        <i class="fa fa-trash-o font-medium-3 mr-2"></i>
-                                                    </a>
-                              
-                                                </td>
-                                          </tr>
+                                          @endforeach
                                             
                                         </tbody>
                                         

@@ -410,10 +410,15 @@
             <div class="container">
 
                 <div class="row">
+                    @foreach($topics as $topic)
                     <div class="col-lg-4">
                         <div class="item box-shadow mb-30 feature-item">
                             <div class="img">
-                                <img src="frontend/assets/img/blog/b/b11.jpeg" alt="">
+                                @php 
+                                $imageUrl = asset('topicImages/' . $topic->topic_image);
+                                
+                                @endphp
+                                <img src="{{ $imageUrl }}" alt="">
 
                                 <div class="tags">
                                     <a href="#" class="gat">Trending</a>
@@ -422,7 +427,7 @@
                             <div class="cont">
                                 
                                 <div class="title">
-                                    <h5><a href="#">ways to quickly increase traffic to your website</a></h5>
+                                    <h5><a href="#">{{$topic->title}}</a></h5>
                                 </div>
                                 <a href="feature-topic-details.html" class="butn butn-inline butn-gr mt-20 opacity-9">
                                     <span class="text">Continue Reading</span>
@@ -431,116 +436,8 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-lg-4">
-                        <div class="item box-shadow mb-30 feature-item">
-                            <div class="img">
-                                <img src="frontend/assets/img/blog/b/b12.jpeg" alt="">
-
-                                <div class="tags">
-                                    <a href="#" class="gat">Trending</a>
-                                </div>
-                            </div>
-                            <div class="cont">
-                                
-                                <div class="title">
-                                    <h5><a href="#">breaking the rules: using sqlite to demo web</a></h5>
-                                </div>
-                                <a href="feature-topic-details.html" class="butn butn-inline butn-gr mt-20 opacity-9">
-                                    <span class="text">Continue Reading</span>
-                                    <span class="underline-gr aqua-bg"></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="item box-shadow mb-30 feature-item">
-                            <div class="img">
-                                <img src="frontend/assets/img/blog/b/b13.jpeg" alt="">
-
-                                <div class="tags">
-                                    <a href="#" class="gat">Trending</a>
-                                </div>
-                            </div>
-                            <div class="cont">
-                                
-                                <div class="title">
-                                    <h5><a href="#">building better ui designs with layout grids</a></h5>
-                                </div>
-                                <a href="feature-topic-details.html" class="butn butn-inline butn-gr mt-20 opacity-9">
-                                    <span class="text">Continue Reading</span>
-                                    <span class="underline-gr aqua-bg"></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="item box-shadow mb-30 feature-item">
-                            <div class="img">
-                                <img src="frontend/assets/img/blog/b/b14.jpeg" alt="">
-
-                                <div class="tags">
-                                    <a href="#" class="gat">Trending</a>
-                                </div>
-                            </div>
-                            <div class="cont">
-                               
-                                <div class="title">
-                                    <h5><a href="#">ways to quickly increase traffic to your website</a></h5>
-                                </div>
-                                <a href="feature-topic-details.html" class="butn butn-inline butn-gr mt-20 opacity-9">
-                                    <span class="text">Continue Reading</span>
-                                    <span class="underline-gr aqua-bg"></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="item box-shadow mb-30 feature-item">
-                            <div class="img">
-                                <img src="frontend/assets/img/blog/b/b15.jpeg" alt="">
-
-                                <div class="tags">
-                                    <a href="#" class="gat">Trending</a>
-                                </div>
-                            </div>
-                            <div class="cont">
-                                
-                                <div class="title">
-                                    <h5><a href="#">breaking the rules: using sqlite to demo web</a></h5>
-                                </div>
-                                <a href="feature-topic-details.html" class="butn butn-inline butn-gr mt-20 opacity-9">
-                                    <span class="text">Continue Reading</span>
-                                    <span class="underline-gr aqua-bg"></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="item box-shadow mb-30 feature-item">
-                            <div class="img">
-                                <img src="frontend/assets/img/blog/b/b16.jpeg" alt="">
-
-                                <div class="tags">
-                                    <a href="#" class="gat">Trending</a>
-                                </div>
-                            </div>
-                            <div class="cont">
-                                
-                                <div class="title">
-                                    <h5><a href="#">building better ui designs with layout grids</a></h5>
-                                </div>
-                                <a href="feature-topic-details.html" class="butn butn-inline butn-gr mt-20 opacity-9">
-                                    <span class="text">Continue Reading</span>
-                                    <span class="underline-gr aqua-bg"></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+                    
                     
                 </div>
             </div>

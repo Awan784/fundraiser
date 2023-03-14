@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FeatureTopic;
 use Illuminate\Http\Request;
 use App\Models\FundRaising;
 use App\Models\User;
@@ -288,7 +289,8 @@ class HomeController extends Controller
         public function index()
         {  
             $FundRaising =  FundRaising::orderByDesc('created_at')->whereNotNull('user_id')->skip(0)->take(9)->get(); 
-            return view('frontend.index',compact('FundRaising'));
+            $topics=FeatureTopic::where('status','1')->get();
+            return view('frontend.index',compact('FundRaising','topics'));
         }
         public function fetchFunds($fetchFund)
         {

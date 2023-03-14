@@ -54,7 +54,8 @@
         <div class="card-body">
           <div class="px-3">
 
-            <form class="form">
+            <form class="form" method="post" enctype="multipart/form-data" action="{{route('create-topic')}}">
+              @csrf
               <div class="row justify-content-md-center">
                 <div class="col-md-6">
                   <div class="form-body">
@@ -66,22 +67,22 @@
 
                     <div class="form-group">
                       <label for="eventInput5">Description</label>
-                      <textarea id="donationinput7" rows="7" class="form-control square" name="comments"></textarea>
+                      <textarea id="donationinput7" rows="7" class="form-control square" name="description"></textarea>
                     </div>
                     <div class="form-group">
                       <label for="eventInput5">Topic Image</label>
-                      <input type="file" id="eventInput2" class="form-control" name="title">
+                      <input type="file" id="eventInput2" class="form-control" name="topic_image">
 
                     </div>
 
                     <div class="form-group">
                       <label>Show on home page</label>
                       <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                        <input type="radio" id="customRadioInline1" name="status" class="custom-control-input" value="1">
                         <label class="custom-control-label" for="customRadioInline1">Yes</label>
                       </div>
                       <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="customRadioInline2" checked="" name="customRadioInline1" class="custom-control-input">
+                        <input type="radio" id="customRadioInline2" checked="" name="status" class="custom-control-input" value="0">
                         <label class="custom-control-label" for="customRadioInline2">No</label>
                       </div>
                     </div>
@@ -93,9 +94,9 @@
 
               <div class="form-actions center">
                 
-                <a href="feature-topics-list.html"  class="btn btn-success">
+                <button type="submit" href="feature-topics-list.html"  class="btn btn-success">
                   Save
-                </a>
+                </button>
               </div>
             </form>
 

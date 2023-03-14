@@ -17,14 +17,14 @@
           </li>
           <li class="{{ (request()->is('admin/commissions')) ? 'nav-item active' : '' }}"><a href="{{route('commissions')}}"><i class="icon-wallet"></i><span data-i18n="" class="menu-title">Commissions</span></a>
           </li>
-          <li class=" nav-item"><a href="withdrawals.html"><i class="icon-paper-plane"></i><span data-i18n="" class="menu-title">Withdrawals</span></a>
+          <li  class="{{ (request()->is('admin/withdrawls')) ? 'nav-item active' : '' }}"><a href="{{route('withdrawls')}}"><i class="icon-paper-plane"></i><span data-i18n="" class="menu-title">Withdrawals</span></a>
           </li>
-          <li class=" nav-item"><a href="website-messages.html"><i class="icon-support"></i><span data-i18n="" class="menu-title">Contact Us</span></a>
+          <li class="{{ (request()->is('admin/website-message')) ? 'nav-item active' : '' }}"><a href="{{route('website-message')}}"><i class="icon-support"></i><span data-i18n="" class="menu-title">Contact Us</span></a>
           </li>
            
-          <li class=" nav-item"><a href="reports_list.html"><i class="icon-support"></i><span data-i18n="" class="menu-title">Reports</span></a>
+          <li class="{{ (request()->is('admin/report')) ? 'nav-item active' : '' }}"><a href="{{route('report')}}"><i class="icon-support"></i><span data-i18n="" class="menu-title">Reports</span></a>
           </li>
-          <li class=" nav-item"><a href="users.html"><i class="icon-users"></i><span data-i18n="" class="menu-title">Users</span></a>
+          <li class="{{ (request()->is('admin/user')) ? 'nav-item active' : '' }}"><a href="{{route('user')}}"><i class="icon-users"></i><span data-i18n="" class="menu-title">Users</span></a>
           </li>
           
           

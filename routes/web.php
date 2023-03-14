@@ -27,7 +27,12 @@ Route::post('/admin/active-fundraiser/update-fundraiser',[AdminDashboardControll
 Route::get('/admin/active-fundraiser/delete-fundraiser/{id}',[AdminDashboardController::class,'deletefundraiser'])->name('delete-fundraiser');
 Route::get('/admin/close-fundraiser',[AdminDashboardController::class,'close_fundraiser'])->name('close-fundraiser');
 Route::get('/admin/feature-topics',[AdminDashboardController::class,'featuretopics'])->name('featuretopics');
+Route::get('/admin/add-topic',[AdminDashboardController::class,'addTopic'])->name('add-topic');
 Route::get('/admin/commissions',[AdminDashboardController::class,'commissions'])->name('commissions');
+Route::get('/admin/withdrawls',[AdminDashboardController::class,'withdrawls'])->name('withdrawls');
+Route::get('/admin/website-message',[AdminDashboardController::class,'websiteMessage'])->name('website-message');
+Route::get('/admin/report',[AdminDashboardController::class,'report'])->name('report');
+Route::get('/admin/user',[AdminDashboardController::class,'user'])->name('user');
 Route::get('/admin/logout', [AdminDashboardController::class,'logout'])->name('adminlogout');
 });
 Route::get('/contact-us',[HomeController::class,'contact'])->name('contact');
